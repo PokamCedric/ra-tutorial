@@ -1,8 +1,9 @@
 import * as mongoDB from "mongodb";
 import * as dotenv from "dotenv";
+import {Post} from "../interfaces/post.interface";
 import {User} from "../interfaces/user.interface";
 
-export const collections: { users?: mongoDB.Collection<User> } = {};
+export const collections: { users?: mongoDB.Collection<User>, posts?: mongoDB.Collection<Post> } = {};
 
 export async function connectToDatabase() {
     // Pulls in the .env file so it can be accessed from process.env. No path as .env is in root, the default location
@@ -18,22 +19,64 @@ export async function connectToDatabase() {
     const db = client.db(process.env.DB_NAME);
     
     // Apply schema validation to the collection
-    await applySchemaValidation(db);
+    await applyPostSchemaValidation(db);
+    await applyUserSchemaValidation(db);
 
     // Connect to the collection with the specific name from .env, found in the database previously specified
-    const usersCollection = db.collection<User>(process.env.BOOKS_COLLECTION_NAME);
+    const postsCollection = db.collection<Post>(process.env.POSTS_COLLECTION_NAME);
+
+    // Persist the connection to the Users collection
+    collections.posts = postsCollection;
+
+    // Connect to the collection with the specific name from .env, found in the database previously specified
+    const usersCollection = db.collection<User>(process.env.USERS_COLLECTION_NAME);
 
     // Persist the connection to the Users collection
     collections.users = usersCollection;
 
     console.log(
-        `Successfully connected to database: ${db.databaseName} and collection: ${usersCollection.collectionName}`,
+        `Successfully connected to database: ${db.databaseName}, collection: ${postsCollection.collectionName} and collection: ${usersCollection.collectionName}`,
     );
 }
 
 // Update our existing collection with JSON schema validation so we know our documents will always match the shape of our User model, even if added elsewhere.
 // For more information about schema validation, see this blog series: https://www.mongodb.com/blog/post/json-schema-validation--locking-down-your-model-the-smart-way
-async function applySchemaValidation(db: mongoDB.Db) {
+async function applyPostSchemaValidation(db: mongoDB.Db) {
+    const jsonSchema = {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["title", "body", "publishedAt"],
+            additionalProperties: false,
+            properties: {
+                _id: {},
+                title: {
+                    bsonType: "string",
+                    description: "'title' is required and is a string",
+                },
+                body: {
+                    bsonType: "string",
+                    description: "'body' is required and is a string",
+                },
+                pusblishedAt: {
+                    bsonType: "string",
+                    description: "'publishedAt' is required and is a string",
+                }
+            },
+        },
+    };
+
+    // Try applying the modification to the collection, if the collection doesn't exist, create it 
+   await db.command({
+        collMod: process.env.POSTS_COLLECTION_NAME,
+        validator: jsonSchema
+    }).catch(async (error: mongoDB.MongoServerError) => {
+        if (error.codeName === 'NamespaceNotFound') {
+            await db.createCollection(process.env.POSTS_COLLECTION_NAME, {validator: jsonSchema});
+        }
+    });
+}
+
+async function applyUserSchemaValidation(db: mongoDB.Db) {
     const jsonSchema = {
         $jsonSchema: {
             bsonType: "object",
@@ -51,7 +94,7 @@ async function applySchemaValidation(db: mongoDB.Db) {
                 },
                 email: {
                     bsonType: "string",
-                    description: "'price' is required and is a string",
+                    description: "'email' is required and is a string",
                 },
                 website: {
                     bsonType: "string",
@@ -63,11 +106,11 @@ async function applySchemaValidation(db: mongoDB.Db) {
 
     // Try applying the modification to the collection, if the collection doesn't exist, create it 
    await db.command({
-        collMod: process.env.BOOKS_COLLECTION_NAME,
+        collMod: process.env.USERS_COLLECTION_NAME,
         validator: jsonSchema
     }).catch(async (error: mongoDB.MongoServerError) => {
         if (error.codeName === 'NamespaceNotFound') {
-            await db.createCollection(process.env.BOOKS_COLLECTION_NAME, {validator: jsonSchema});
+            await db.createCollection(process.env.USERS_COLLECTION_NAME, {validator: jsonSchema});
         }
     });
 }
