@@ -1,0 +1,9 @@
+{
+    "title": "I am am Magician",
+    "author": "Cedric Pokam",
+    "pages": 500,
+    "rating": 9,
+      "reviews" : [
+          {"name": "peach" , "body": "one of my favs"}
+    ]
+  }
