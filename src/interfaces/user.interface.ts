@@ -4,7 +4,7 @@ import { ObjectId } from "mongodb";
 // test it here: https://www.typescriptlang.org/play?#code
 /*
 
-var obj: Book = {
+var obj: User = {
   title: "Name of the Wind",
   author: "Patrick Rothfuss",
   pages: 500,
@@ -14,18 +14,11 @@ var obj: Book = {
   ]
 }*/
 
-export interface Review {
-    name: string;
-    body: string;
-}
 
-export interface Book {
-    title: string;
-    author: string;
-    pages: number;
-    rating: number;
-    reviews: {
-        [key: number]: Review
-    };
+export interface User {
+    name: string;
+    username: string;
+    email: string;
+    website: string;
     id?: ObjectId;
 }

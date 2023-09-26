@@ -27,9 +27,9 @@ The below diagram shows the overall architecture of the diagram and the followin
 
 ![Architecture diagram of the application](./images/diagram.png)
 
-### Books Router
+### Users Router
 
-The books.router.ts class uses Express's Router functionality. It defines the endpoints available to clients for the Create, Read, Update and Delete (CRUD) operations and then communicates with the database via the MongoDB NodeJS Driver.
+The users.router.ts class uses Express's Router functionality. It defines the endpoints available to clients for the Create, Read, Update and Delete (CRUD) operations and then communicates with the database via the MongoDB NodeJS Driver.
 
 ### Database Service
 
@@ -37,7 +37,7 @@ The database.service.ts class implements the connection the database. This is al
 
 ### Models
 
-TypeScript is an optionally statically typed language that allows for taking advantage of object-orientated programming. The books.ts class creates a class that defines the properties and data types expected in our document. We use this model throughout the code to enjoy the benefits of typed objects.
+TypeScript is an optionally statically typed language that allows for taking advantage of object-orientated programming. The users.ts class creates a class that defines the properties and data types expected in our document. We use this model throughout the code to enjoy the benefits of typed objects.
 
 ## More information
 

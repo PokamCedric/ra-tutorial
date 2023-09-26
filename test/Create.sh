@@ -7,7 +7,7 @@ result=$(curl -d '{
     "reviews" : [
         {"name": "peach" , "body": "one of my favs"}
   ]
-}' -H "Content-Type: application/json" -X POST http://localhost:8080/books)
+}' -H "Content-Type: application/json" -X POST http://localhost:8082/users)
 echo "Response from server"
 echo $result
 

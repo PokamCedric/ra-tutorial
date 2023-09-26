@@ -1,8 +1,8 @@
 import * as mongoDB from "mongodb";
 import * as dotenv from "dotenv";
-import {Book} from "../interfaces/book.interface";
+import {User} from "../interfaces/user.interface";
 
-export const collections: { books?: mongoDB.Collection<Book> } = {};
+export const collections: { users?: mongoDB.Collection<User> } = {};
 
 export async function connectToDatabase() {
     // Pulls in the .env file so it can be accessed from process.env. No path as .env is in root, the default location
@@ -21,47 +21,42 @@ export async function connectToDatabase() {
     await applySchemaValidation(db);
 
     // Connect to the collection with the specific name from .env, found in the database previously specified
-    const booksCollection = db.collection<Book>(process.env.BOOKS_COLLECTION_NAME);
+    const usersCollection = db.collection<User>(process.env.BOOKS_COLLECTION_NAME);
 
-    // Persist the connection to the Books collection
-    collections.books = booksCollection;
+    // Persist the connection to the Users collection
+    collections.users = usersCollection;
 
     console.log(
-        `Successfully connected to database: ${db.databaseName} and collection: ${booksCollection.collectionName}`,
+        `Successfully connected to database: ${db.databaseName} and collection: ${usersCollection.collectionName}`,
     );
 }
 
-// Update our existing collection with JSON schema validation so we know our documents will always match the shape of our Book model, even if added elsewhere.
+// Update our existing collection with JSON schema validation so we know our documents will always match the shape of our User model, even if added elsewhere.
 // For more information about schema validation, see this blog series: https://www.mongodb.com/blog/post/json-schema-validation--locking-down-your-model-the-smart-way
 async function applySchemaValidation(db: mongoDB.Db) {
     const jsonSchema = {
         $jsonSchema: {
             bsonType: "object",
-            required: ["title", "author", "pages", "rating", "reviews"],
+            required: ["name", "username", "email", "website"],
             additionalProperties: false,
             properties: {
                 _id: {},
-                title: {
+                name: {
                     bsonType: "string",
-                    description: "'title' is required and is a string",
+                    description: "'name' is required and is a string",
                 },
-                author: {
+                username: {
                     bsonType: "string",
-                    description: "'author' is required and is a string",
+                    description: "'username' is required and is a string",
                 },
-                pages: {
-                    bsonType: "number",
-                    description: "'price' is required and is a number",
+                email: {
+                    bsonType: "string",
+                    description: "'price' is required and is a string",
                 },
-                rating: {
-                    bsonType: "number",
-                    description: "'rating' is required and is a number",
-                },
-                reviews : {
-                    bsonType : "array",
-                    description: "'reviews' is required and are is an Array",
+                website: {
+                    bsonType: "string",
+                    description: "'website' is required and is a string",
                 }
-            
             },
         },
     };

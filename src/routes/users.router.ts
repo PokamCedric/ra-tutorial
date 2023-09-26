@@ -2,44 +2,44 @@ import express, { Request, Response } from "express";
 import { ObjectId } from "mongodb";
 import { collections } from "../services/database.service";
 
-export const booksRouter = express.Router();
-const docName = "book";
-const DocName = "Book";
+export const usersRouter = express.Router();
+const docName = "user";
+const DocName = "User";
 
-booksRouter.use(express.json());
+usersRouter.use(express.json());
 
-booksRouter.get("/", async (_req: Request, res: Response) => {
+usersRouter.get("/", async (_req: Request, res: Response) => {
     try {
-        // Call find with an empty filter object, meaning it returns all documents in the collection. Saves as Book array to take advantage of types
-        const books = await collections.books.find({}).toArray();
+        // Call find with an empty filter object, meaning it returns all documents in the collection. Saves as User array to take advantage of types
+        const users = await collections.users.find({}).toArray();
 
-        res.status(200).send(books);
+        res.status(200).send(users);
     } catch (error) {
         res.status(500).send(error.message);
     }
 });
 
-// Example route: http://localhost:8080/books/610aaf458025d42e7ca9fcd0
-booksRouter.get("/:id", async (req: Request, res: Response) => {
+// Example route: http://localhost:8082/users/610aaf458025d42e7ca9fcd0
+usersRouter.get("/:id", async (req: Request, res: Response) => {
     const id = req?.params?.id;
 
     try {
         // _id in MongoDB is an objectID type so we need to find our specific document by querying
         const query = { _id: new ObjectId(id) };
-        const book = await collections.books.findOne(query);
+        const user = await collections.users.findOne(query);
 
-        if (book) {
-            res.status(200).send(book);
+        if (user) {
+            res.status(200).send(user);
         }
     } catch (error) {
         res.status(404).send(`Unable to find matching document with id: ${req.params.id}`);
     }
 });
 
-booksRouter.post("/", async (req: Request, res: Response) => {
+usersRouter.post("/", async (req: Request, res: Response) => {
     try {
-        const newBook = req.body;
-        const result = await collections.books.insertOne(newBook);
+        const newUser = req.body;
+        const result = await collections.users.insertOne(newUser);
 
         result
             ? res.status(201).send(`Successfully created a new ${docName} with id ${result.insertedId}`)
@@ -50,15 +50,15 @@ booksRouter.post("/", async (req: Request, res: Response) => {
     }
 });
 
-booksRouter.put("/:id", async (req: Request, res: Response) => {
+usersRouter.put("/:id", async (req: Request, res: Response) => {
     const id = req?.params?.id;
 
     if (ObjectId.isValid(id)) {
         try {
-            const updatedBook = req.body;
+            const updatedUser = req.body;
             const query = { _id: new ObjectId(id) };
             // $set adds or updates all fields
-            const result = await collections.books.updateOne(query, { $set: updatedBook });
+            const result = await collections.users.updateOne(query, { $set: updatedUser });
 
             result
                 ? res.status(200).send(`Successfully updated ${docName} with id ${id}`)
@@ -72,13 +72,13 @@ booksRouter.put("/:id", async (req: Request, res: Response) => {
     } 
 });
 
-booksRouter.delete("/:id", async (req: Request, res: Response) => {
+usersRouter.delete("/:id", async (req: Request, res: Response) => {
     const id = req?.params?.id;
 
     if (ObjectId.isValid(id)) {
         try {
             const query = { _id: new ObjectId(id) };
-            const result = await collections.books.deleteOne(query);
+            const result = await collections.users.deleteOne(query);
 
             if (result && result.deletedCount) {
                 res.status(202).send(`Successfully removed ${docName} with id ${id}`);

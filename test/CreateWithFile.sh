@@ -1,5 +1,5 @@
 echo "This is a test..."
-result=$(curl -d '@data.json' -H "Content-Type: application/json" -X POST http://localhost:8080/books)
+result=$(curl -d '@data.json' -H "Content-Type: application/json" -X POST http://localhost:8082/users)
 echo "Response from server"
 echo $result
 

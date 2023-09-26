@@ -1,5 +1,5 @@
 echo "This is a test..."
-result=$(curl -X GET --header "Accept: */*" "http://localhost:8080/books")
+result=$(curl -X GET --header "Accept: */*" "http://localhost:8082/users")
 echo "Response from server"
 echo $result
 
