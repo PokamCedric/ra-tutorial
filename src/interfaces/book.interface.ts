@@ -19,7 +19,7 @@ export interface Review {
     body: string;
 }
 
-export default interface Book {
+export interface Book {
     title: string;
     author: string;
     pages: number;

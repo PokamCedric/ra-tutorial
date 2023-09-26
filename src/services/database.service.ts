@@ -1,6 +1,6 @@
 import * as mongoDB from "mongodb";
 import * as dotenv from "dotenv";
-import Book from "../models/book";
+import {Book} from "../interfaces/book.interface";
 
 export const collections: { books?: mongoDB.Collection<Book> } = {};
 
@@ -35,26 +35,9 @@ export async function connectToDatabase() {
 // For more information about schema validation, see this blog series: https://www.mongodb.com/blog/post/json-schema-validation--locking-down-your-model-the-smart-way
 async function applySchemaValidation(db: mongoDB.Db) {
     const jsonSchema = {
-        $definitions: {
-            reviews: {
-                bsonType: "object",
-                required: ["name", "body"],
-                additionalProperties: false,
-                    properties: {
-                        name: {
-                            bsonType: "string",
-                            description: "'name' is required and is a string",
-                        },                        
-                        body: {
-                            bsonType: "string",
-                            description: "'body' is required and is a string",
-                        },
-                },
-            },
-        },
         $jsonSchema: {
             bsonType: "object",
-            required: ["title", "author", "pages", "rating"],
+            required: ["title", "author", "pages", "rating", "reviews"],
             additionalProperties: false,
             properties: {
                 _id: {},
