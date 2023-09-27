@@ -60,7 +60,7 @@ async function applyPostSchemaValidation(db: mongoDB.Db) {
                     bsonType: "string",
                     description: "'body' is required and is a string",
                 },
-                pusblishedAt: {
+                publishedAt: {
                     bsonType: "string",
                     description: "'publishedAt' is required and is a string",
                 }
