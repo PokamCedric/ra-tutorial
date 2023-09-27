@@ -9,10 +9,10 @@ postsRouter.use(express.json());
 usersRouter.use(express.json());
 
 postsRouter.use(
-    raExpressMongoDB( getCollectionPosts, "post", "Post")
+    raExpressMongoDB(getCollectionPosts, "post", "Post")
 );
 
 usersRouter.use(
-    raExpressMongoDB( getCollectionUsers, "user", "User")
+    raExpressMongoDB(getCollectionUsers, "user", "User")
 );
 
