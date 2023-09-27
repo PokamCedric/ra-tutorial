@@ -1,7 +1,8 @@
 import express from "express";
 import { connectToDatabase } from "./services/database.service";
 import { postsRouter,  usersRouter } from "./routes/routers";
-import PostSevice from "./services/post.services";
+import PostSevice from "./services/post.axios.services";
+import DataProvider from "./services/dataprovider";
 
 const app = express();
 const port = process.env.PORT; // default port to listen
@@ -29,7 +30,7 @@ connectToDatabase()
     });
 
 
-    const retrieveTutorials = () => {
+    const retrievePosts = () => {
         PostSevice.getAll()
           .then((response: any) => {
             console.log(response.data);
@@ -39,7 +40,7 @@ connectToDatabase()
           });
       };
 
-      const getTutorial = (id: string) => {
+      const getPost = (id: string) => {
         PostSevice.get(id)
           .then((response: any) => {
             console.log(response.data);
@@ -50,12 +51,15 @@ connectToDatabase()
       };
       
     async function testAPI(){
-        retrieveTutorials();
-        getTutorial("65146ec7d0b40ba181df2ebd");
+        //retrievePosts();
+        // getPost("65146ec7d0b40ba181df2ebd");
 
         console.log("other tests on: very-good-react-typescript-api-call")
         console.log("https://github.com/bezkoder/react-typescript-api-call/tree/master/src/components")
 
+
+        const resp = await DataProvider.getOne("posts", {id: "65146ec7d0b40ba181df2ebd"});
+        console.log(resp.data);
         // const posts = await fetchAll("posts");
         // console.log(posts);
         // const post = await findOne("posts", {id: "65146ec7d0b40ba181df2ebd"});
