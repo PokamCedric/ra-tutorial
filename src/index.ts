@@ -1,14 +1,13 @@
 import express from "express";
 import { connectToDatabase } from "./services/database.service";
-import { postsRouter } from "./routes/posts.router";
-import { usersRouter } from "./routes/users.router";
+import { postsRouter,  usersRouter } from "./routes/routers";
 
 const app = express();
 const port = 8082; // default port to listen
 
 connectToDatabase()
     .then(() => {
-        // send all calls to /users to our usersRouter
+        // send all calls to /users to our postsRouter
         app.use("/posts", postsRouter);
 
         // send all calls to /users to our usersRouter

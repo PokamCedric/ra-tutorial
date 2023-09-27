@@ -3,7 +3,10 @@ import * as dotenv from "dotenv";
 import {Post} from "../interfaces/post.interface";
 import {User} from "../interfaces/user.interface";
 
-export const collections: { users?: mongoDB.Collection<User>, posts?: mongoDB.Collection<Post> } = {};
+const collections: { users?: mongoDB.Collection<User>, posts?: mongoDB.Collection<Post> } = {};
+
+export  const getCollectionPosts = () : mongoDB.Collection<Post> => { return collections.posts } 
+export  const getCollectionUsers = () : mongoDB.Collection<User> => { return collections.users } 
 
 export async function connectToDatabase() {
     // Pulls in the .env file so it can be accessed from process.env. No path as .env is in root, the default location
@@ -23,19 +26,19 @@ export async function connectToDatabase() {
     await applyUserSchemaValidation(db);
 
     // Connect to the collection with the specific name from .env, found in the database previously specified
-    const postsCollection = db.collection<Post>(process.env.POSTS_COLLECTION_NAME);
+    const getCollectionPostsion = db.collection<Post>(process.env.POSTS_COLLECTION_NAME);
 
     // Persist the connection to the Users collection
-    collections.posts = postsCollection;
+    collections.posts = getCollectionPostsion;
 
     // Connect to the collection with the specific name from .env, found in the database previously specified
-    const usersCollection = db.collection<User>(process.env.USERS_COLLECTION_NAME);
+    const getCollectionUsersion = db.collection<User>(process.env.USERS_COLLECTION_NAME);
 
     // Persist the connection to the Users collection
-    collections.users = usersCollection;
+    collections.users = getCollectionUsersion;
 
     console.log(
-        `Successfully connected to database: ${db.databaseName}, collection: ${postsCollection.collectionName} and collection: ${usersCollection.collectionName}`,
+        `Successfully connected to database: ${db.databaseName}, collection: ${getCollectionPostsion.collectionName} and collection: ${getCollectionUsersion.collectionName}`,
     );
 }
 
