@@ -31,7 +31,9 @@
         "axios": "^1.5.1",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
-        "mongodb": "^4.0.1"
+        "mongodb": "^4.0.1",
+        "query-string": "^8.1.0",
+        "ra-core": "^4.14.3"
     },
     "devDependencies": {
         "@types/express": "^4.17.13",

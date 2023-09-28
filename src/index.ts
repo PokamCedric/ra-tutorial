@@ -1,9 +1,9 @@
 import express from "express";
 import { connectToDatabase } from "./services/database.service";
 import { postsRouter,  usersRouter } from "./routes/routers";
-import AxiosService from "./services/post.axios.services";
+import AxiosService from "./services/axios.services";
 import * as dotenv from "dotenv";
-import IPost from "./interfaces/post.interface";
+import { GetListParams } from "ra-core";
 
 
 dotenv.config();
@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT; // default port to listen
 const apiUrl = process.env.API_URL; // default port to listen
 
-export const PostSevice = AxiosService<IPost>();
+const PostSevice = AxiosService('https://jsonplaceholder.typicode.com');
 
 connectToDatabase()
     .then(() => {
@@ -34,11 +34,16 @@ connectToDatabase()
         process.exit();
     });
 
-const postResource = "posts";
+const postResource = "users";
     const retrievePosts = () => {
-        PostSevice.getAll(postResource, {})
+      const params : GetListParams =  {
+        pagination: { page: 1, perPage: 5 },
+        sort: { field: 'title', order: 'ASC' },
+        filter: { author_id: 12 },
+    }
+        PostSevice.getList(postResource, params)
           .then((response: any) => {
-            console.log(response.data);
+            console.log("retrievePosts:", response.data);
           })
           .catch((e: Error) => {
             console.log(e);
@@ -46,9 +51,9 @@ const postResource = "posts";
       };
 
       const getPost = (id: string) => {
-        PostSevice.get(postResource, {id: id})
+        PostSevice.getOne(postResource, {id: id})
           .then((response: any) => {
-            console.log(response.data);
+            console.log("getPost: ", response.data);
           })
           .catch((e: Error) => {
             console.log(e);
@@ -57,7 +62,7 @@ const postResource = "posts";
 
     async function testAPI(){
         retrievePosts();
-        getPost("65146ec7d0b40ba181df2ebd");
+        getPost("8");
 
         console.log("other tests on: very-good-react-typescript-api-call")
         console.log("https://github.com/bezkoder/react-typescript-api-call/tree/master/src/components")
