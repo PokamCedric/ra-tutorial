@@ -1,5 +1,5 @@
 import { Admin, Resource, ShowGuesser } from 'react-admin';
-import jsonServerProvider from 'ra-data-json-server';
+import jsonServerProvider from './dataProvider';
 import PostIcon from '@mui/icons-material/Book';
 import UserIcon from '@mui/icons-material/Group';
 
