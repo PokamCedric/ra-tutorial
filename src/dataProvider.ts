@@ -35,6 +35,7 @@ import { fetchUtils, DataProvider } from 'ra-core';
  */
 export default (apiUrl : String, httpClient = fetchUtils.fetchJson): DataProvider => ({
     getList: (resource, params) => {
+        console.log("getList ");
         const { page, perPage } = params.pagination;
         const { field, order } = params.sort;
         const query = {
@@ -47,27 +48,29 @@ export default (apiUrl : String, httpClient = fetchUtils.fetchJson): DataProvide
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
 
         return httpClient(url).then(({ headers, json }) => {
+            console.log("x-total-count ", headers.has('x-total-count'));
             if (!headers.has('x-total-count')) {
                 throw new Error(
                     'The X-Total-Count header is missing in the HTTP Response. The jsonServer Data Provider expects responses for lists of resources to contain this header with the total number of results to build the pagination. If you are using CORS, did you declare X-Total-Count in the Access-Control-Expose-Headers header?'
                 );
             }
+            const count = parseInt( headers.get('x-total-count')?.split('/').pop()??"0", 10 )
+            console.log("test xx ", count);
             return {
                 data: json,
-                total: parseInt(
-                    headers.get('x-total-count')?.split('/').pop()??"0",
-                    10
-                ),
+                total: count,
             };
         });
     },
 
-    getOne: (resource, params) =>
-        httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
+    getOne: (resource, params) => {
+        console.log("getOne ");
+        return  httpClient(`${apiUrl}/${resource}/${params.id}`).then(({ json }) => ({
             data: json,
-        })),
-
+        }));
+    },
     getMany: (resource, params) => {
+        console.log("getMany ", params.ids);
         const query = {
             id: params.ids,
         };
@@ -89,6 +92,7 @@ export default (apiUrl : String, httpClient = fetchUtils.fetchJson): DataProvide
         const url = `${apiUrl}/${resource}?${stringify(query)}`;
 
         return httpClient(url).then(({ headers, json }) => {
+            console.log("x-total-count ", headers.has('x-total-count'));
             if (!headers.has('x-total-count')) {
                 throw new Error(
                     'The X-Total-Count header is missing in the HTTP Response. The jsonServer Data Provider expects responses for lists of resources to contain this header with the total number of results to build the pagination. If you are using CORS, did you declare X-Total-Count in the Access-Control-Expose-Headers header?'

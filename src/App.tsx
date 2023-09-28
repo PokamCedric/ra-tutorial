@@ -8,7 +8,7 @@ import { UserList } from './users';
 import { Dashboard } from './Dashboard';
 import { authProvider } from './authProvider';
 
-const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+const dataProvider = jsonServerProvider('http://localhost:8082');
 
 const App = () => (
     <Admin
