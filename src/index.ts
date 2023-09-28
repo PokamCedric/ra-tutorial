@@ -1,12 +1,17 @@
 import express from "express";
 import { connectToDatabase } from "./services/database.service";
 import { postsRouter,  usersRouter } from "./routes/routers";
-import PostSevice from "./services/post.axios.services";
-import DataProvider from "./services/dataprovider";
+import AxiosService from "./services/post.axios.services";
+import * as dotenv from "dotenv";
+import IPost from "./interfaces/post.interface";
 
+
+dotenv.config();
 const app = express();
 const port = process.env.PORT; // default port to listen
 const apiUrl = process.env.API_URL; // default port to listen
+
+export const PostSevice = AxiosService<IPost>();
 
 connectToDatabase()
     .then(() => {
@@ -29,9 +34,9 @@ connectToDatabase()
         process.exit();
     });
 
-
+const postResource = "posts";
     const retrievePosts = () => {
-        PostSevice.getAll()
+        PostSevice.getAll(postResource, {})
           .then((response: any) => {
             console.log(response.data);
           })
@@ -41,7 +46,7 @@ connectToDatabase()
       };
 
       const getPost = (id: string) => {
-        PostSevice.get(id)
+        PostSevice.get(postResource, {id: id})
           .then((response: any) => {
             console.log(response.data);
           })
@@ -49,17 +54,17 @@ connectToDatabase()
             console.log(e);
           });
       };
-      
+
     async function testAPI(){
-        //retrievePosts();
-        // getPost("65146ec7d0b40ba181df2ebd");
+        retrievePosts();
+        getPost("65146ec7d0b40ba181df2ebd");
 
         console.log("other tests on: very-good-react-typescript-api-call")
         console.log("https://github.com/bezkoder/react-typescript-api-call/tree/master/src/components")
 
+        // const resp = await dataProvider.getOne('posts', { id: "65146ec7d0b40ba181df2ebd" });
+        // console.log(resp.data);
 
-        const resp = await DataProvider.getOne("posts", {id: "65146ec7d0b40ba181df2ebd"});
-        console.log(resp.data);
         // const posts = await fetchAll("posts");
         // console.log(posts);
         // const post = await findOne("posts", {id: "65146ec7d0b40ba181df2ebd"});

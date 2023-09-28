@@ -1,7 +1,7 @@
 import * as mongoDB from "mongodb";
 import * as dotenv from "dotenv";
-import {Post} from "../interfaces/post.interface";
-import {User} from "../interfaces/user.interface";
+import Post from "../interfaces/post.interface";
+import User from "../interfaces/user.interface";
 
 const collections: { users?: mongoDB.Collection<User>, posts?: mongoDB.Collection<Post> } = {};
 
