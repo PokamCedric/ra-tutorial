@@ -31,7 +31,9 @@
         "axios": "^1.5.1",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
+        "express-mongoose-ra-json-server": "^0.2.2",
         "mongodb": "^4.0.1",
+        "mongoose": "^7.5.3",
         "query-string": "^8.1.0",
         "ra-core": "^4.14.3"
     },

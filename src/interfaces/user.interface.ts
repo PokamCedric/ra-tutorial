@@ -1,10 +1,8 @@
-import { ObjectId } from "mongodb";
-
-
-export default interface IUser {
-    name: string;
-    username: string;
-    email: string;
-    website: string;
-    id?: ObjectId;
+export interface User {
+  name: string;
+  username: string;
+  birthDate?: Date;
+  email?: string;
+  phone?: string;
+  company?: string;
 }
