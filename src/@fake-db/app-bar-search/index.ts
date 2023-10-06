@@ -41,13 +41,6 @@ const searchData: AppBarSearchType[] = [
     category: 'appsPages'
   },
   {
-    id: 6,
-    url: '/apps/calendar',
-    icon: 'mdi:calendar-blank-outline',
-    title: 'Calendar',
-    category: 'appsPages'
-  },
-  {
     id: 7,
     url: '/apps/invoice/list',
     icon: 'mdi:format-list-numbered',

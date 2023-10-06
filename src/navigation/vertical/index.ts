@@ -37,11 +37,6 @@ const navigation = (): VerticalNavItemsType => {
       path: '/apps/chat'
     },
     {
-      title: 'Calendar',
-      icon: 'mdi:calendar-blank-outline',
-      path: '/apps/calendar'
-    },
-    {
       title: 'Invoice',
       icon: 'mdi:file-document-outline',
       children: [
@@ -350,7 +345,6 @@ const navigation = (): VerticalNavItemsType => {
       icon: 'mdi:google-circles-extended'
     },
     {
-      
       title: 'Cards',
       icon: 'mdi:credit-card-outline',
       children: [
@@ -465,7 +459,7 @@ const navigation = (): VerticalNavItemsType => {
         {
           title: 'More',
           path: '/components/more'
-        },
+        }
       ]
     },
     {
@@ -526,7 +520,7 @@ const navigation = (): VerticalNavItemsType => {
         {
           title: 'Input Mask',
           path: '/forms/form-elements/input-mask'
-        },
+        }
       ]
     },
     {

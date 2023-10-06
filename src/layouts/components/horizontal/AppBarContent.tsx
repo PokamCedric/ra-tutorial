@@ -70,12 +70,6 @@ const notifications: NotificationsType[] = [
 
 const shortcuts: ShortcutsType[] = [
   {
-    title: 'Calendar',
-    url: '/apps/calendar',
-    subtitle: 'Appointments',
-    icon: 'mdi:calendar-month-outline'
-  },
-  {
     title: 'Invoice App',
     url: '/apps/invoice/list',
     subtitle: 'Manage Accounts',

@@ -86,11 +86,6 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Apps & Pages',
     suggestions: [
       {
-        icon: 'mdi:calendar-blank',
-        suggestion: 'Calendar',
-        link: '/apps/calendar'
-      },
-      {
         icon: 'mdi:format-list-numbered',
         suggestion: 'Invoice List',
         link: '/apps/invoice/list'
