@@ -32,11 +32,6 @@ const navigation = (): VerticalNavItemsType => {
       path: '/apps/email'
     },
     {
-      title: 'Chat',
-      icon: 'mdi:message-outline',
-      path: '/apps/chat'
-    },
-    {
       title: 'Invoice',
       icon: 'mdi:file-document-outline',
       children: [

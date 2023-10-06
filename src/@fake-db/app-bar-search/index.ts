@@ -34,13 +34,6 @@ const searchData: AppBarSearchType[] = [
     category: 'appsPages'
   },
   {
-    id: 5,
-    url: '/apps/chat',
-    icon: 'mdi:message-outline',
-    title: 'Chat',
-    category: 'appsPages'
-  },
-  {
     id: 7,
     url: '/apps/invoice/list',
     icon: 'mdi:format-list-numbered',
