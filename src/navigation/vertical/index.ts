@@ -84,20 +84,6 @@ const navigation = (): VerticalNavItemsType => {
       ]
     },
     {
-      title: 'Roles & Permissions',
-      icon: 'mdi:shield-outline',
-      children: [
-        {
-          title: 'Roles',
-          path: '/apps/roles'
-        },
-        {
-          title: 'Permissions',
-          path: '/apps/permissions'
-        }
-      ]
-    },
-    {
       title: 'Pages',
       icon: 'mdi:file-document-outline',
       children: [

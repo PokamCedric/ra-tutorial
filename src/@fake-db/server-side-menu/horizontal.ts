@@ -86,20 +86,6 @@ const navigation: HorizontalNavItemsType = [
             ]
           }
         ]
-      },
-      {
-        title: 'Roles & Permissions',
-        icon: 'mdi:shield-outline',
-        children: [
-          {
-            title: 'Roles',
-            path: '/apps/roles'
-          },
-          {
-            title: 'Permissions',
-            path: '/apps/permissions'
-          }
-        ]
       }
     ]
   },

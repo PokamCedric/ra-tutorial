@@ -97,20 +97,6 @@ const searchData: AppBarSearchType[] = [
     category: 'appsPages'
   },
   {
-    id: 17,
-    url: '/apps/roles',
-    icon: 'mdi:shield-outline',
-    title: 'Roles',
-    category: 'appsPages'
-  },
-  {
-    id: 18,
-    url: '/apps/permissions',
-    icon: 'mdi:lock-outline',
-    title: 'Permissions',
-    category: 'appsPages'
-  },
-  {
     id: 19,
     url: '/pages/user-profile/profile',
     icon: 'mdi:card-account-details-outline',

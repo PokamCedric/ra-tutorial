@@ -87,12 +87,6 @@ const shortcuts: ShortcutsType[] = [
     icon: 'mdi:account-outline'
   },
   {
-    url: '/apps/roles',
-    title: 'Role Management',
-    subtitle: 'Permissions',
-    icon: 'mdi:shield-check-outline'
-  },
-  {
     url: '/',
     title: 'Dashboard',
     icon: 'mdi:chart-pie',

@@ -4,13 +4,11 @@ import { configureStore } from '@reduxjs/toolkit'
 // ** Reducers
 import user from 'src/store/apps/user'
 import invoice from 'src/store/apps/invoice'
-import permissions from 'src/store/apps/permissions'
 
 export const store = configureStore({
   reducer: {
     user,
-    invoice,
-    permissions
+    invoice
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
