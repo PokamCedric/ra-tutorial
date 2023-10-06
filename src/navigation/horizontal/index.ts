@@ -29,11 +29,6 @@ const navigation = (): HorizontalNavItemsType => {
       title: 'Apps',
       children: [
         {
-          title: 'Email',
-          icon: 'mdi:email-outline',
-          path: '/apps/email'
-        },
-        {
           title: 'Invoice',
           icon: 'mdi:file-document-outline',
           children: [

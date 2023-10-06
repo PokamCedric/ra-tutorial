@@ -27,13 +27,6 @@ const searchData: AppBarSearchType[] = [
     category: 'dashboards'
   },
   {
-    id: 4,
-    url: '/apps/email',
-    icon: 'mdi:email-outline',
-    title: 'Email',
-    category: 'appsPages'
-  },
-  {
     id: 7,
     url: '/apps/invoice/list',
     icon: 'mdi:format-list-numbered',

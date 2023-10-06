@@ -27,11 +27,6 @@ const navigation = (): VerticalNavItemsType => {
       sectionTitle: 'Apps & Pages'
     },
     {
-      title: 'Email',
-      icon: 'mdi:email-outline',
-      path: '/apps/email'
-    },
-    {
       title: 'Invoice',
       icon: 'mdi:file-document-outline',
       children: [
