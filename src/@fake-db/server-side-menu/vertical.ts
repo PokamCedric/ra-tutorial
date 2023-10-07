@@ -287,24 +287,6 @@ const navigation: VerticalNavItemsType = [
     ]
   },
   {
-    title: 'Wizard Examples',
-    icon: 'mdi:transit-connection-horizontal',
-    children: [
-      {
-        title: 'Checkout',
-        path: '/pages/wizard-examples/checkout'
-      },
-      {
-        title: 'Property Listing',
-        path: '/pages/wizard-examples/property-listing'
-      },
-      {
-        title: 'Create Deal',
-        path: '/pages/wizard-examples/create-deal'
-      }
-    ]
-  },
-  {
     sectionTitle: 'Forms & Tables'
   },
   {
@@ -320,26 +302,6 @@ const navigation: VerticalNavItemsType = [
         path: '/forms/form-elements/editor'
       }
     ]
-  },
-  {
-    icon: 'mdi:cube-outline',
-    title: 'Form Layouts',
-    path: '/forms/form-layouts'
-  },
-  {
-    title: 'Form Validation',
-    path: '/forms/form-validation',
-    icon: 'mdi:checkbox-marked-circle-outline'
-  },
-  {
-    title: 'Form Wizard',
-    path: '/forms/form-wizard',
-    icon: 'mdi:transit-connection-horizontal'
-  },
-  {
-    title: 'Table',
-    icon: 'mdi:grid-large',
-    path: '/tables/mui'
   },
   {
     title: 'Mui DataGrid',

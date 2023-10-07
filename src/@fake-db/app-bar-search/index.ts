@@ -314,27 +314,6 @@ const searchData: AppBarSearchType[] = [
     url: '/pages/auth/two-steps-v2'
   },
   {
-    id: 50,
-    icon: 'mdi:cart-outline',
-    category: 'appsPages',
-    title: 'Wizard - Checkout',
-    url: '/pages/wizard-examples/checkout'
-  },
-  {
-    id: 51,
-    category: 'appsPages',
-    icon: 'mdi:office-building-outline',
-    title: 'Wizard - Property Listing',
-    url: '/pages/wizard-examples/property-listing'
-  },
-  {
-    id: 52,
-    icon: 'mdi:gift-outline',
-    category: 'appsPages',
-    title: 'Wizard - Create Deal',
-    url: '/pages/wizard-examples/create-deal'
-  },
-  {
     id: 91,
     url: '/forms/form-elements/file-uploader',
     icon: 'mdi:tray-arrow-up',
@@ -346,34 +325,6 @@ const searchData: AppBarSearchType[] = [
     url: '/forms/form-elements/editor',
     icon: 'mdi:square-edit-outline',
     title: 'Editor',
-    category: 'formsTables'
-  },
-  {
-    id: 95,
-    url: '/forms/form-layouts',
-    icon: 'mdi:cube-outline',
-    title: 'Form Layouts',
-    category: 'formsTables'
-  },
-  {
-    id: 96,
-    url: '/forms/form-validation',
-    icon: 'mdi:checkbox-marked-circle-outline',
-    title: 'Form Validation',
-    category: 'formsTables'
-  },
-  {
-    id: 97,
-    url: '/forms/form-wizard',
-    icon: 'mdi:transit-connection-horizontal',
-    title: 'Form Wizard',
-    category: 'formsTables'
-  },
-  {
-    id: 98,
-    url: '/tables/mui',
-    icon: 'mdi:grid-large',
-    title: 'Table',
     category: 'formsTables'
   },
   {
