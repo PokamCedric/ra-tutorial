@@ -318,36 +318,6 @@ const navigation: VerticalNavItemsType = [
     icon: 'mdi:google-circles-extended'
   },
   {
-    title: 'Cards',
-    icon: 'mdi:credit-card-outline',
-    children: [
-      {
-        title: 'Basic',
-        path: '/ui/cards/basic'
-      },
-      {
-        title: 'Advanced',
-        path: '/ui/cards/advanced'
-      },
-      {
-        title: 'Statistics',
-        path: '/ui/cards/statistics'
-      },
-      {
-        title: 'Widgets',
-        path: '/ui/cards/widgets'
-      },
-      {
-        title: 'Gamification',
-        path: '/ui/cards/gamification'
-      },
-      {
-        title: 'Actions',
-        path: '/ui/cards/actions'
-      }
-    ]
-  },
-  {
     badgeContent: '19',
     title: 'Components',
     icon: 'mdi:archive-outline',

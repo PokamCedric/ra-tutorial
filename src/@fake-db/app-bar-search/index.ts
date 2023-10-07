@@ -349,48 +349,6 @@ const searchData: AppBarSearchType[] = [
     category: 'userInterface'
   },
   {
-    id: 56,
-    url: '/ui/cards/basic',
-    icon: 'mdi:card-outline',
-    title: 'Card Basic',
-    category: 'userInterface'
-  },
-  {
-    id: 57,
-    url: '/ui/cards/advanced',
-    icon: 'mdi:card-bulleted-settings-outline',
-    title: 'Card Advanced',
-    category: 'userInterface'
-  },
-  {
-    id: 58,
-    url: '/ui/cards/statistics',
-    icon: 'mdi:chart-box-outline',
-    title: 'Card Statistics',
-    category: 'userInterface'
-  },
-  {
-    id: 59,
-    url: '/ui/cards/widgets',
-    icon: 'mdi:view-grid-plus-outline',
-    title: 'Card Widgets',
-    category: 'userInterface'
-  },
-  {
-    id: 60,
-    url: '/ui/cards/gamification',
-    icon: 'mdi:card-account-details-outline',
-    title: 'Card Gamification',
-    category: 'userInterface'
-  },
-  {
-    id: 61,
-    url: '/ui/cards/actions',
-    icon: 'mdi:card-plus-outline',
-    title: 'Card Actions',
-    category: 'userInterface'
-  },
-  {
     id: 62,
     url: '/components/accordion',
     icon: 'mdi:fullscreen-exit',
