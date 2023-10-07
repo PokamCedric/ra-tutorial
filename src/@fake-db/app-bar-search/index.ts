@@ -530,69 +530,7 @@ const searchData: AppBarSearchType[] = [
     title: 'More Components',
     category: 'userInterface'
   },
-  {
-    id: 82,
-    url: '/forms/form-elements/text-field',
-    icon: 'mdi:lastpass',
-    title: 'TextField',
-    category: 'formsTables'
-  },
-  {
-    id: 83,
-    url: '/forms/form-elements/select',
-    icon: 'mdi:format-list-checkbox',
-    title: 'Select',
-    category: 'formsTables'
-  },
-  {
-    id: 84,
-    url: '/forms/form-elements/checkbox',
-    icon: 'mdi:checkbox-outline',
-    title: 'Checkbox',
-    category: 'formsTables'
-  },
-  {
-    id: 85,
-    url: '/forms/form-elements/radio',
-    icon: 'mdi:radiobox-marked',
-    title: 'Radio',
-    category: 'formsTables'
-  },
-  {
-    id: 86,
-    icon: 'mdi:order-bool-ascending-variant',
-    title: 'Custom Inputs',
-    category: 'formsTables',
-    url: '/forms/form-elements/custom-inputs'
-  },
-  {
-    id: 87,
-    url: '/forms/form-elements/textarea',
-    icon: 'mdi:card-text-outline',
-    title: 'Textarea',
-    category: 'formsTables'
-  },
-  {
-    id: 88,
-    url: '/forms/form-elements/autocomplete',
-    icon: 'mdi:lastpass',
-    title: 'Autocomplete',
-    category: 'formsTables'
-  },
-  {
-    id: 89,
-    url: '/forms/form-elements/pickers',
-    icon: 'mdi:calendar-month',
-    title: 'Date Pickers',
-    category: 'formsTables'
-  },
-  {
-    id: 90,
-    url: '/forms/form-elements/switch',
-    icon: 'mdi:toggle-switch-outline',
-    title: 'Switch',
-    category: 'formsTables'
-  },
+
   {
     id: 91,
     url: '/forms/form-elements/file-uploader',
@@ -605,20 +543,6 @@ const searchData: AppBarSearchType[] = [
     url: '/forms/form-elements/editor',
     icon: 'mdi:square-edit-outline',
     title: 'Editor',
-    category: 'formsTables'
-  },
-  {
-    id: 93,
-    url: '/forms/form-elements/slider',
-    icon: 'mdi:gesture-swipe-horizontal',
-    title: 'Slider',
-    category: 'formsTables'
-  },
-  {
-    id: 94,
-    url: '/forms/form-elements/input-mask',
-    icon: 'mdi:lastpass',
-    title: 'Input Mask',
     category: 'formsTables'
   },
   {

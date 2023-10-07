@@ -443,56 +443,12 @@ const navigation: VerticalNavItemsType = [
     icon: 'mdi:form-select',
     children: [
       {
-        title: 'Text Field',
-        path: '/forms/form-elements/text-field'
-      },
-      {
-        title: 'Select',
-        path: '/forms/form-elements/select'
-      },
-      {
-        title: 'Checkbox',
-        path: '/forms/form-elements/checkbox'
-      },
-      {
-        title: 'Radio',
-        path: '/forms/form-elements/radio'
-      },
-      {
-        title: 'Custom Inputs',
-        path: '/forms/form-elements/custom-inputs'
-      },
-      {
-        title: 'Textarea',
-        path: '/forms/form-elements/textarea'
-      },
-      {
-        title: 'Autocomplete',
-        path: '/forms/form-elements/autocomplete'
-      },
-      {
-        title: 'Date Pickers',
-        path: '/forms/form-elements/pickers'
-      },
-      {
-        title: 'Switch',
-        path: '/forms/form-elements/switch'
-      },
-      {
         title: 'File Uploader',
         path: '/forms/form-elements/file-uploader'
       },
       {
         title: 'Editor',
         path: '/forms/form-elements/editor'
-      },
-      {
-        title: 'Slider',
-        path: '/forms/form-elements/slider'
-      },
-      {
-        title: 'Input Mask',
-        path: '/forms/form-elements/input-mask'
       }
     ]
   },
