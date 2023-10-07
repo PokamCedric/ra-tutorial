@@ -573,18 +573,6 @@ const navigation = (): VerticalNavItemsType => {
         {
           title: 'Disabled Menu',
           disabled: true
-        },
-        {
-          title: 'Raise Support',
-          externalLink: true,
-          openInNewTab: true,
-          path: 'https://themeselection.com/support'
-        },
-        {
-          title: 'Documentation',
-          externalLink: true,
-          openInNewTab: true,
-          path: 'https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation'
         }
       ]
     }

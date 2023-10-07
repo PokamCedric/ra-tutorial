@@ -589,20 +589,6 @@ const navigation = (): HorizontalNavItemsType => {
           title: 'Disabled Menu',
           icon: 'mdi:eye-off-outline',
           disabled: true
-        },
-        {
-          title: 'Raise Support',
-          icon: 'mdi:lifebuoy',
-          externalLink: true,
-          openInNewTab: true,
-          path: 'https://themeselection.com/support'
-        },
-        {
-          title: 'Documentation',
-          icon: 'mdi:file-document-outline',
-          externalLink: true,
-          openInNewTab: true,
-          path: 'https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation'
         }
       ]
     }

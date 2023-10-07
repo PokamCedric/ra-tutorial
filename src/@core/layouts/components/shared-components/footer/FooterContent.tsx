@@ -25,25 +25,22 @@ const FooterContent = () => {
           ❤️
         </Box>
         {` by `}
-        <LinkStyled target='_blank' href='https://themeselection.com/'>
-          ThemeSelection
+        <LinkStyled target='_blank' href='https://de.linkedin.com/in/c%C3%A9dric-jo%C3%ABl-ngameni-pokam-146151155/'>
+          Cédric Pokam
         </LinkStyled>
       </Typography>
       {hidden ? null : (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', '& :not(:last-child)': { mr: 4 } }}>
-          <LinkStyled target='_blank' href='https://themeselection.com/license/'>
+          <LinkStyled target='_blank' href='https://de.linkedin.com/in/c%C3%A9dric-jo%C3%ABl-ngameni-pokam-146151155/'>
             License
           </LinkStyled>
-          <LinkStyled target='_blank' href='https://themeselection.com/'>
+          <LinkStyled target='_blank' href='https://de.linkedin.com/in/c%C3%A9dric-jo%C3%ABl-ngameni-pokam-146151155/'>
             More Themes
           </LinkStyled>
-          <LinkStyled
-            target='_blank'
-            href='https://demos.themeselection.com/materio-mui-react-nextjs-admin-template/documentation'
-          >
+          <LinkStyled target='_blank' href='https://de.linkedin.com/in/c%C3%A9dric-jo%C3%ABl-ngameni-pokam-146151155'>
             Documentation
           </LinkStyled>
-          <LinkStyled target='_blank' href='https://themeselection.com/support/'>
+          <LinkStyled target='_blank' href='https://de.linkedin.com/in/c%C3%A9dric-jo%C3%ABl-ngameni-pokam-146151155/'>
             Support
           </LinkStyled>
         </Box>
