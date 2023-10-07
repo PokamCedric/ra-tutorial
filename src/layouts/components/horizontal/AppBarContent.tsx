@@ -98,12 +98,6 @@ const shortcuts: ShortcutsType[] = [
     subtitle: 'FAQs & Articles',
     icon: 'mdi:help-circle-outline',
     url: '/pages/help-center'
-  },
-  {
-    title: 'Dialogs',
-    subtitle: 'Useful Dialogs',
-    icon: 'mdi:window-maximize',
-    url: '/pages/dialog-examples'
   }
 ]
 

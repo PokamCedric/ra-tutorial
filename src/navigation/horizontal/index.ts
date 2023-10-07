@@ -441,11 +441,6 @@ const navigation = (): HorizontalNavItemsType => {
               path: '/pages/wizard-examples/create-deal'
             }
           ]
-        },
-        {
-          icon: 'mdi:vector-arrange-below',
-          title: 'Dialog Examples',
-          path: '/pages/dialog-examples'
         }
       ]
     },

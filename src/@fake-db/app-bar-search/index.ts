@@ -335,13 +335,6 @@ const searchData: AppBarSearchType[] = [
     url: '/pages/wizard-examples/create-deal'
   },
   {
-    id: 53,
-    url: '/pages/dialog-examples',
-    icon: 'mdi:vector-arrange-below',
-    title: 'Dialog Examples',
-    category: 'appsPages'
-  },
-  {
     id: 54,
     url: '/ui/typography',
     icon: 'mdi:format-letter-case',

@@ -303,11 +303,6 @@ const navigation = (): VerticalNavItemsType => {
       ]
     },
     {
-      icon: 'mdi:vector-arrange-below',
-      title: 'Dialog Examples',
-      path: '/pages/dialog-examples'
-    },
-    {
       sectionTitle: 'User Interface'
     },
     {
