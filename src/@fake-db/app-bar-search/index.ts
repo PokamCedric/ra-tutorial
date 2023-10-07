@@ -335,27 +335,6 @@ const searchData: AppBarSearchType[] = [
     category: 'formsTables'
   },
   {
-    id: 100,
-    url: '/charts/apex-charts',
-    icon: 'mdi:chart-line',
-    title: 'Apex Charts',
-    category: 'chartsMisc'
-  },
-  {
-    id: 101,
-    url: '/charts/recharts',
-    icon: 'mdi:chart-bell-curve-cumulative',
-    title: 'Recharts',
-    category: 'chartsMisc'
-  },
-  {
-    id: 102,
-    url: '/charts/chartjs',
-    icon: 'mdi:chart-bell-curve',
-    title: 'ChartJS',
-    category: 'chartsMisc'
-  },
-  {
     id: 103,
     url: '/acl',
     icon: 'mdi:shield-outline',

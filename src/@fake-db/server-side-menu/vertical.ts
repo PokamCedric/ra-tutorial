@@ -309,27 +309,6 @@ const navigation: VerticalNavItemsType = [
     path: '/tables/data-grid'
   },
   {
-    sectionTitle: 'Charts & Misc'
-  },
-  {
-    title: 'Charts',
-    icon: 'mdi:chart-donut',
-    children: [
-      {
-        title: 'Apex',
-        path: '/charts/apex-charts'
-      },
-      {
-        title: 'Recharts',
-        path: '/charts/recharts'
-      },
-      {
-        title: 'ChartJS',
-        path: '/charts/chartjs'
-      }
-    ]
-  },
-  {
     path: '/acl',
     action: 'read',
     subject: 'acl-page',
