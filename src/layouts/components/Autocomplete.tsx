@@ -132,23 +132,13 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     suggestions: [
       {
         icon: 'mdi:format-list-checkbox',
-        suggestion: 'Select',
-        link: '/forms/form-elements/select'
+        suggestion: 'File Uploader',
+        link: '/forms/form-elements/file-uploader'
       },
       {
         icon: 'mdi:lastpass',
-        suggestion: 'Autocomplete',
-        link: '/forms/form-elements/autocomplete'
-      },
-      {
-        icon: 'mdi:view-grid-outline',
-        suggestion: 'Table',
-        link: '/tables/mui'
-      },
-      {
-        icon: 'mdi:calendar-range',
-        suggestion: 'Date Pickers',
-        link: '/forms/form-elements/pickers'
+        suggestion: 'Editor',
+        link: '/forms/form-elements/editor'
       }
     ]
   }
