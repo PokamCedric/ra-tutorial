@@ -103,31 +103,6 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     ]
   },
   {
-    category: 'User Interface',
-    suggestions: [
-      {
-        icon: 'mdi:format-text-variant-outline',
-        suggestion: 'Typography',
-        link: '/ui/typography'
-      },
-      {
-        icon: 'mdi:tab',
-        suggestion: 'Tabs',
-        link: '/components/tabs'
-      },
-      {
-        icon: 'mdi:gesture-tap-button',
-        suggestion: 'Buttons',
-        link: '/components/buttons'
-      },
-      {
-        icon: 'mdi:card-bulleted-settings-outline',
-        suggestion: 'Advanced Cards',
-        link: '/ui/cards/advanced'
-      }
-    ]
-  },
-  {
     category: 'Forms & Tables',
     suggestions: [
       {
@@ -147,9 +122,7 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
 const categoryTitle: { [k: string]: string } = {
   dashboards: 'Dashboards',
   appsPages: 'Apps & Pages',
-  userInterface: 'User Interface',
-  formsTables: 'Forms & Tables',
-  chartsMisc: 'Charts & Misc'
+  formsTables: 'Forms & Tables'
 }
 
 // ** Styled Autocomplete component
