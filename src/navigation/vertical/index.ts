@@ -333,35 +333,6 @@ const navigation = (): VerticalNavItemsType => {
       subject: 'acl-page',
       icon: 'mdi:shield-outline',
       title: 'Access Control'
-    },
-    {
-      title: 'Others',
-      icon: 'mdi:dots-horizontal',
-      children: [
-        {
-          title: 'Menu Levels',
-          children: [
-            {
-              title: 'Menu Level 2.1'
-            },
-            {
-              title: 'Menu Level 2.2',
-              children: [
-                {
-                  title: 'Menu Level 3.1'
-                },
-                {
-                  title: 'Menu Level 3.2'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          title: 'Disabled Menu',
-          disabled: true
-        }
-      ]
     }
   ]
 }

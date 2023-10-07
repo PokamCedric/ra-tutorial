@@ -343,42 +343,11 @@ const navigation: HorizontalNavItemsType = [
     ]
   },
   {
-    title: 'Others',
-    icon: 'mdi:dots-horizontal',
-    children: [
-      {
-        path: '/acl',
-        action: 'read',
-        subject: 'acl-page',
-        icon: 'mdi:shield-outline',
-        title: 'Access Control'
-      },
-      {
-        title: 'Menu Levels',
-        icon: 'mdi:menu',
-        children: [
-          {
-            title: 'Menu Level 2.1'
-          },
-          {
-            title: 'Menu Level 2.2',
-            children: [
-              {
-                title: 'Menu Level 3.1'
-              },
-              {
-                title: 'Menu Level 3.2'
-              }
-            ]
-          }
-        ]
-      },
-      {
-        title: 'Disabled Menu',
-        icon: 'mdi:eye-off-outline',
-        disabled: true
-      }
-    ]
+    path: '/acl',
+    action: 'read',
+    subject: 'acl-page',
+    icon: 'mdi:shield-outline',
+    title: 'Access Control'
   }
 ]
 
