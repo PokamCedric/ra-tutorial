@@ -335,20 +335,6 @@ const searchData: AppBarSearchType[] = [
     url: '/pages/wizard-examples/create-deal'
   },
   {
-    id: 54,
-    url: '/ui/typography',
-    icon: 'mdi:format-letter-case',
-    title: 'Typography',
-    category: 'userInterface'
-  },
-  {
-    id: 55,
-    url: '/ui/icons',
-    icon: 'mdi:google-circles-extended',
-    title: 'Icons',
-    category: 'userInterface'
-  },
-  {
     id: 62,
     url: '/components/accordion',
     icon: 'mdi:fullscreen-exit',

@@ -306,16 +306,6 @@ const navigation = (): VerticalNavItemsType => {
       sectionTitle: 'User Interface'
     },
     {
-      title: 'Typography',
-      icon: 'mdi:format-letter-case',
-      path: '/ui/typography'
-    },
-    {
-      title: 'Icons',
-      path: '/ui/icons',
-      icon: 'mdi:google-circles-extended'
-    },
-    {
       badgeContent: '19',
       title: 'Components',
       icon: 'mdi:archive-outline',

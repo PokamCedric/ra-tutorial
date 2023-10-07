@@ -92,16 +92,6 @@ const navigation = (): HorizontalNavItemsType => {
       title: 'UI',
       children: [
         {
-          title: 'Typography',
-          icon: 'mdi:format-letter-case',
-          path: '/ui/typography'
-        },
-        {
-          title: 'Icons',
-          path: '/ui/icons',
-          icon: 'mdi:google-circles-extended'
-        },
-        {
           title: 'Components',
           icon: 'mdi:archive-outline',
           children: [
