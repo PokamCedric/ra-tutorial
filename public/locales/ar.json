@@ -1,8 +1,6 @@
 {
   "Dashboards": "لوحات القيادة",
-  "CRM": "CRM",
   "Analytics": "تحليلات",
-  "eCommerce": "التجارة الإلكترونية",
   "Apps & Pages": "التطبيقات والصفحات",
   "Apps": "تطبيقات",
   "Email": "البريد الإلكتروني",
@@ -67,10 +65,6 @@
   "Form Elements": "عناصر النموذج",
   "File Uploader": "رافع الملف",
   "Editor": "محرر",
-  "Form Layouts": "تخطيطات النموذج",
-  "Form Validation": "التحقق من صحة النموذج",
-  "Form Wizard": "معالج النماذج",
-  "Table": "الطاولة",
   "Mui DataGrid": "موي داتاجريد",
   "Access Control": "صلاحية التحكم صلاحية الدخول"
 }

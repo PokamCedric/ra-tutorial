@@ -12,16 +12,8 @@ const navigation: VerticalNavItemsType = [
     badgeColor: 'error',
     children: [
       {
-        title: 'CRM',
-        path: '/dashboards/crm'
-      },
-      {
         title: 'Analytics',
         path: '/dashboards/analytics'
-      },
-      {
-        title: 'eCommerce',
-        path: '/dashboards/ecommerce'
       }
     ]
   },

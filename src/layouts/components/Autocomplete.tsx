@@ -61,19 +61,9 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     category: 'Popular Searches',
     suggestions: [
       {
-        icon: 'mdi:chart-donut',
-        suggestion: 'Analytics',
-        link: '/dashboards/crm'
-      },
-      {
         icon: 'mdi:poll',
         suggestion: 'Analytics',
         link: '/dashboards/analytics'
-      },
-      {
-        icon: 'mdi:chart-bubble',
-        suggestion: 'eCommerce',
-        link: '/dashboards/ecommerce'
       },
       {
         icon: 'mdi:account-group',
@@ -219,25 +209,6 @@ const NoResult = ({ value, setOpenDialog }: NoResultProps) => {
         Try searching for
       </Typography>
       <List sx={{ py: 0 }}>
-        <ListItem sx={{ py: 2 }} disablePadding onClick={() => setOpenDialog(false)}>
-          <Box
-            component={Link}
-            href='/dashboards/ecommerce'
-            sx={{
-              display: 'flex',
-              alignItems: 'center',
-              textDecoration: 'none',
-              '&:hover > *': { color: 'primary.main' }
-            }}
-          >
-            <Box sx={{ mr: 2.5, display: 'flex', color: 'text.primary' }}>
-              <Icon icon='mdi:cart-outline' fontSize={20} />
-            </Box>
-            <Typography variant='body2' sx={{ color: 'text.primary' }}>
-              eCommerce Dashboard
-            </Typography>
-          </Box>
-        </ListItem>
         <ListItem sx={{ py: 2 }} disablePadding onClick={() => setOpenDialog(false)}>
           <Box
             component={Link}

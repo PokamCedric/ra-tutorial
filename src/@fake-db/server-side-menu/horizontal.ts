@@ -10,19 +10,9 @@ const navigation: HorizontalNavItemsType = [
     title: 'Dashboards',
     children: [
       {
-        title: 'CRM',
-        icon: 'mdi:chart-donut',
-        path: '/dashboards/crm'
-      },
-      {
         icon: 'mdi:chart-timeline-variant',
         title: 'Analytics',
         path: '/dashboards/analytics'
-      },
-      {
-        icon: 'mdi:cart-outline',
-        title: 'eCommerce',
-        path: '/dashboards/ecommerce'
       }
     ]
   },

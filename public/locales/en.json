@@ -1,8 +1,6 @@
 {
   "Dashboards": "Dashboards",
-  "CRM": "CRM",
   "Analytics": "Analytics",
-  "eCommerce": "eCommerce",
   "Apps & Pages": "Apps & Pages",
   "Apps": "Apps",
   "Email": "Email",
@@ -67,10 +65,6 @@
   "Form Elements": "Form Elements",
   "File Uploader": "File Uploader",
   "Editor": "Editor",
-  "Form Layouts": "Form Layouts",
-  "Form Validation": "Form Validation",
-  "Form Wizard": "Form Wizard",
-  "Table": "Table",
   "Mui DataGrid": "Mui DataGrid",
   "Access Control": "Access Control"
 }
