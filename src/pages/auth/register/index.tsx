@@ -1,20 +1,27 @@
 // ** React Imports
-import { ReactNode, ChangeEvent, useState, KeyboardEvent } from 'react'
+import { ReactNode, useState } from 'react'
 
 // ** Next Import
 import Link from 'next/link'
 
 // ** MUI Components
 import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
+import Divider from '@mui/material/Divider'
+import Checkbox from '@mui/material/Checkbox'
+import TextField from '@mui/material/TextField'
+import InputLabel from '@mui/material/InputLabel'
+import IconButton from '@mui/material/IconButton'
 import Box, { BoxProps } from '@mui/material/Box'
+import FormControl from '@mui/material/FormControl'
 import useMediaQuery from '@mui/material/useMediaQuery'
+import OutlinedInput from '@mui/material/OutlinedInput'
 import { styled, useTheme } from '@mui/material/styles'
-import FormHelperText from '@mui/material/FormHelperText'
+import InputAdornment from '@mui/material/InputAdornment'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Typography, { TypographyProps } from '@mui/material/Typography'
 
-// ** Third Party Imports
-import Cleave from 'cleave.js/react'
-import { useForm, Controller } from 'react-hook-form'
+// ** Icon Imports
+import Icon from 'src/@core/components/icon'
 
 // ** Configs
 import themeConfig from 'src/configs/themeConfig'
@@ -28,17 +35,8 @@ import { useSettings } from 'src/@core/hooks/useSettings'
 // ** Demo Imports
 import FooterIllustrationsV2 from 'src/views/pages/auth/FooterIllustrationsV2'
 
-// ** Custom Styled Component
-import CleaveWrapper from 'src/@core/styles/libs/react-cleave'
-
-// ** Util Import
-import { hexToRGBA } from 'src/@core/utils/hex-to-rgba'
-
-// ** Styles
-import 'cleave.js/dist/addons/cleave-phone.us'
-
 // ** Styled Components
-const TwoStepsIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
+const RegisterIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   padding: theme.spacing(20),
   paddingRight: '0 !important',
   [theme.breakpoints.down('lg')]: {
@@ -46,7 +44,7 @@ const TwoStepsIllustrationWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
-const TwoStepsIllustration = styled('img')(({ theme }) => ({
+const RegisterIllustration = styled('img')(({ theme }) => ({
   maxWidth: '46rem',
   [theme.breakpoints.down('lg')]: {
     maxWidth: '35rem'
@@ -78,122 +76,41 @@ const BoxWrapper = styled(Box)<BoxProps>(({ theme }) => ({
   }
 }))
 
+const TypographyStyled = styled(Typography)<TypographyProps>(({ theme }) => ({
+  fontWeight: 600,
+  marginBottom: theme.spacing(1.5),
+  [theme.breakpoints.down('md')]: { mt: theme.spacing(8) }
+}))
+
 const LinkStyled = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
-  marginLeft: theme.spacing(1),
   color: theme.palette.primary.main
 }))
 
-const CleaveInput = styled(Cleave)(({ theme }) => ({
-  maxWidth: 50,
-  textAlign: 'center',
-  height: '50px !important',
-  fontSize: '150% !important',
-  marginTop: theme.spacing(2),
-  marginBottom: theme.spacing(2),
-  '&:not(:last-child)': {
-    marginRight: theme.spacing(2)
-  },
-  '&::-webkit-outer-spin-button, &::-webkit-inner-spin-button': {
-    margin: 0,
-    WebkitAppearance: 'none'
-  }
-}))
-
-const defaultValues: { [key: string]: string } = {
-  val1: '',
-  val2: '',
-  val3: '',
-  val4: '',
-  val5: '',
-  val6: ''
-}
-const TwoStepsV2 = () => {
-  // ** State
-  const [isBackspace, setIsBackspace] = useState<boolean>(false)
+const Register = () => {
+  // ** States
+  const [showPassword, setShowPassword] = useState<boolean>(false)
 
   // ** Hooks
   const theme = useTheme()
   const { settings } = useSettings()
-  const {
-    control,
-    handleSubmit,
-    formState: { errors }
-  } = useForm({ defaultValues })
+  const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
   // ** Vars
   const { skin } = settings
-  const hidden = useMediaQuery(theme.breakpoints.down('md'))
 
-  const imageSource = skin === 'bordered' ? 'auth-v2-two-steps-illustration-bordered' : 'auth-v2-two-steps-illustration'
-
-  // ** Vars
-  const errorsArray = Object.keys(errors)
-
-  const handleChange = (event: ChangeEvent, onChange: (...event: any[]) => void) => {
-    if (!isBackspace) {
-      onChange(event)
-
-      // @ts-ignore
-      const form = event.target.form
-      const index = [...form].indexOf(event.target)
-      if (form[index].value && form[index].value.length) {
-        form.elements[index + 1].focus()
-      }
-      event.preventDefault()
-    }
-  }
-
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === 'Backspace') {
-      setIsBackspace(true)
-
-      // @ts-ignore
-      const form = event.target.form
-      const index = [...form].indexOf(event.target)
-      if (index >= 1) {
-        if (!(form[index].value && form[index].value.length)) {
-          form.elements[index - 1].focus()
-        }
-      }
-    } else {
-      setIsBackspace(false)
-    }
-  }
-
-  const renderInputs = () => {
-    return Object.keys(defaultValues).map((val, index) => (
-      <Controller
-        key={val}
-        name={val}
-        control={control}
-        rules={{ required: true }}
-        render={({ field: { value, onChange } }) => (
-          <Box
-            type='tel'
-            value={value}
-            autoFocus={index === 0}
-            component={CleaveInput}
-            onKeyDown={handleKeyDown}
-            onChange={(event: ChangeEvent) => handleChange(event, onChange)}
-            options={{ blocks: [1], numeral: true, numeralPositiveOnly: true }}
-            sx={{ [theme.breakpoints.down('sm')]: { px: `${theme.spacing(2)} !important` } }}
-          />
-        )}
-      />
-    ))
-  }
+  const imageSource = skin === 'bordered' ? 'auth-v2-register-illustration-bordered' : 'auth-v2-register-illustration'
 
   return (
     <Box className='content-right'>
       {!hidden ? (
         <Box sx={{ flex: 1, display: 'flex', position: 'relative', alignItems: 'center', justifyContent: 'center' }}>
-          <TwoStepsIllustrationWrapper>
-            <TwoStepsIllustration
-              alt='two-steps-illustration'
+          <RegisterIllustrationWrapper>
+            <RegisterIllustration
+              alt='register-illustration'
               src={`/images/pages/${imageSource}-${theme.palette.mode}.png`}
             />
-          </TwoStepsIllustrationWrapper>
+          </RegisterIllustrationWrapper>
           <FooterIllustrationsV2 image={<TreeIllustration alt='tree' src='/images/pages/tree-2.png' />} />
         </Box>
       ) : null}
@@ -292,44 +209,77 @@ const TwoStepsV2 = () => {
               </Typography>
             </Box>
             <Box sx={{ mb: 6 }}>
-              <Typography variant='h5' sx={{ mb: 2 }}>
-                Two Step Verification 💬
-              </Typography>
-              <Typography sx={{ color: 'text.secondary' }}>
-                We sent a verification code to your mobile. Enter the code from the mobile in the field below.
-              </Typography>
-              <Typography sx={{ mt: 2, fontWeight: 700 }}>******1234</Typography>
+              <TypographyStyled variant='h5'>Adventure starts here 🚀</TypographyStyled>
+              <Typography variant='body2'>Make your app management easy and fun!</Typography>
             </Box>
-            <Typography sx={{ fontWeight: 600, color: 'text.secondary' }}>Type your 6 digit security code</Typography>
-            <form onSubmit={handleSubmit(() => true)}>
-              <CleaveWrapper
-                sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  ...(errorsArray.length && {
-                    '& .invalid:focus': {
-                      borderColor: theme => `${theme.palette.error.main} !important`,
-                      boxShadow: theme => `0 1px 3px 0 ${hexToRGBA(theme.palette.error.main, 0.4)}`
-                    }
-                  })
-                }}
-              >
-                {renderInputs()}
-              </CleaveWrapper>
-              {errorsArray.length ? (
-                <FormHelperText sx={{ color: 'error.main' }}>Please enter a valid OTP</FormHelperText>
-              ) : null}
-              <Button fullWidth type='submit' variant='contained' sx={{ mt: 4 }}>
-                Verify My Account
+            <form noValidate autoComplete='off' onSubmit={e => e.preventDefault()}>
+              <TextField autoFocus fullWidth sx={{ mb: 4 }} label='Username' placeholder='johndoe' />
+              <TextField fullWidth label='Email' sx={{ mb: 4 }} placeholder='user@email.com' />
+              <FormControl fullWidth>
+                <InputLabel htmlFor='auth-login-v2-password'>Password</InputLabel>
+                <OutlinedInput
+                  label='Password'
+                  id='auth-login-v2-password'
+                  type={showPassword ? 'text' : 'password'}
+                  endAdornment={
+                    <InputAdornment position='end'>
+                      <IconButton
+                        edge='end'
+                        onMouseDown={e => e.preventDefault()}
+                        onClick={() => setShowPassword(!showPassword)}
+                      >
+                        <Icon icon={showPassword ? 'mdi:eye-outline' : 'mdi:eye-off-outline'} />
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                />
+              </FormControl>
+              <FormControlLabel
+                control={<Checkbox />}
+                sx={{ mb: 4, mt: 1.5, '& .MuiFormControlLabel-label': { fontSize: '0.875rem' } }}
+                label={
+                  <>
+                    <Typography variant='body2' component='span'>
+                      I agree to{' '}
+                    </Typography>
+                    <LinkStyled href='/' onClick={e => e.preventDefault()}>
+                      privacy policy & terms
+                    </LinkStyled>
+                  </>
+                }
+              />
+              <Button fullWidth size='large' type='submit' variant='contained' sx={{ mb: 7 }}>
+                Sign up
               </Button>
+              <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <Typography variant='body2' sx={{ mr: 2 }}>
+                  Already have an account?
+                </Typography>
+                <Typography variant='body2'>
+                  <LinkStyled href='/login'>Sign in instead</LinkStyled>
+                </Typography>
+              </Box>
+              <Divider sx={{ my: theme => `${theme.spacing(5)} !important` }}>or</Divider>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <IconButton href='/' component={Link} sx={{ color: '#497ce2' }} onClick={e => e.preventDefault()}>
+                  <Icon icon='mdi:facebook' />
+                </IconButton>
+                <IconButton href='/' component={Link} sx={{ color: '#1da1f2' }} onClick={e => e.preventDefault()}>
+                  <Icon icon='mdi:twitter' />
+                </IconButton>
+                <IconButton
+                  href='/'
+                  component={Link}
+                  onClick={e => e.preventDefault()}
+                  sx={{ color: theme => (theme.palette.mode === 'light' ? '#272727' : 'grey.300') }}
+                >
+                  <Icon icon='mdi:github' />
+                </IconButton>
+                <IconButton href='/' component={Link} sx={{ color: '#db4437' }} onClick={e => e.preventDefault()}>
+                  <Icon icon='mdi:google' />
+                </IconButton>
+              </Box>
             </form>
-            <Box sx={{ mt: 4, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Typography sx={{ color: 'text.secondary' }}>Didn't get the code?</Typography>
-              <LinkStyled href='/' onClick={e => e.preventDefault()}>
-                Resend
-              </LinkStyled>
-            </Box>
           </BoxWrapper>
         </Box>
       </RightWrapper>
@@ -337,6 +287,8 @@ const TwoStepsV2 = () => {
   )
 }
 
-TwoStepsV2.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
+Register.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
-export default TwoStepsV2
+Register.guestGuard = true
+
+export default Register

@@ -74,7 +74,7 @@ const LinkStyled = styled(Link)(({ theme }) => ({
   color: theme.palette.primary.main
 }))
 
-const ForgotPasswordV2 = () => {
+const ForgotPassword = () => {
   // ** Hooks
   const theme = useTheme()
   const { settings } = useSettings()
@@ -205,7 +205,7 @@ const ForgotPasswordV2 = () => {
                 Send reset link
               </Button>
               <Typography variant='body2' sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <LinkStyled href='/pages/auth/login-v2'>
+                <LinkStyled href='/login'>
                   <Icon icon='mdi:chevron-left' />
                   <span>Back to login</span>
                 </LinkStyled>
@@ -218,6 +218,8 @@ const ForgotPasswordV2 = () => {
   )
 }
 
-ForgotPasswordV2.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
+ForgotPassword.getLayout = (page: ReactNode) => <BlankLayout>{page}</BlankLayout>
 
-export default ForgotPasswordV2
+ForgotPassword.guestGuard = true
+
+export default ForgotPassword
