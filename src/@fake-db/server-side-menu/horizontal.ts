@@ -8,13 +8,7 @@ const navigation: HorizontalNavItemsType = [
   {
     icon: 'mdi:home-outline',
     title: 'Dashboards',
-    children: [
-      {
-        icon: 'mdi:chart-timeline-variant',
-        title: 'Analytics',
-        path: '/dashboards/analytics'
-      }
-    ]
+    path: '/dashboards'
   },
   {
     icon: 'mdi:apps',

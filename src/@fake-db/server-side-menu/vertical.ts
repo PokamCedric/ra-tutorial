@@ -10,12 +10,7 @@ const navigation: VerticalNavItemsType = [
     icon: 'mdi:home-outline',
     badgeContent: 'new',
     badgeColor: 'error',
-    children: [
-      {
-        title: 'Analytics',
-        path: '/dashboards/analytics'
-      }
-    ]
+    path: '/dashboards'
   },
   {
     sectionTitle: 'Apps & Pages'

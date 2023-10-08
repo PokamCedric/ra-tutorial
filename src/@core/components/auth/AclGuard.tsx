@@ -22,7 +22,7 @@ import BlankLayout from 'src/@core/layouts/BlankLayout'
 import { useAuth } from 'src/hooks/useAuth'
 
 // ** Util Import
-import getHomeRoute from 'src/layouts/components/acl/getHomeRoute'
+import getHomeRoute from 'src/pages/auth/getHomeRoute'
 
 interface AclGuardProps {
   children: ReactNode
