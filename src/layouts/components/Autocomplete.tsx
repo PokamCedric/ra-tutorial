@@ -62,8 +62,8 @@ const defaultSuggestionsData: DefaultSuggestionsType[] = [
     suggestions: [
       {
         icon: 'mdi:poll',
-        suggestion: 'Analytics',
-        link: '/dashboards/analytics'
+        suggestion: 'Dashboards',
+        link: '/dashboards'
       },
       {
         icon: 'mdi:account-group',

@@ -26,12 +26,12 @@ const ACLPage = () => {
           </CardContent>
         </Card>
       </Grid>
-      {ability?.can('read', 'analytics') ? (
+      {ability?.can('read', 'dashboard') ? (
         <Grid item md={6} xs={12}>
           <Card>
-            <CardHeader title='Analytics' />
+            <CardHeader title='Dashboard' />
             <CardContent>
-              <Typography sx={{ mb: 4 }}>User with 'Analytics' subject's 'Read' ability can view this card</Typography>
+              <Typography sx={{ mb: 4 }}>User with 'Dashboard' subject's 'Read' ability can view this card</Typography>
               <Typography sx={{ color: 'error.main' }}>This card is visible to 'admin' only</Typography>
             </CardContent>
           </Card>
