@@ -46,7 +46,7 @@ const StepAccountDetails = ({ handleNext }: { handleNext: () => void }) => {
       <Grid container spacing={5}>
         <Grid item xs={12} sm={6}>
           <FormControl fullWidth>
-            <TextField label='Username' placeholder='johndoe' />
+            <TextField label='First Name' placeholder='johndoe' />
           </FormControl>
         </Grid>
         <Grid item xs={12} sm={6}>

@@ -10,8 +10,8 @@ export type UsersType = {
   company: string
   country: string
   contact: string
-  fullName: string
-  username: string
+  lastName: string
+  firstName: string
   currentPlan: string
   avatarColor?: ThemeColor
 }

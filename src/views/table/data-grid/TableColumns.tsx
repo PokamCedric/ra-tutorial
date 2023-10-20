@@ -62,7 +62,7 @@ const statusObj: StatusObj = {
   5: { title: 'applied', color: 'info' }
 }
 
-// ** Full Name Getter
+// ** Last Name Getter
 const getFullName = (params: GridRenderCellParams) =>
   toast(
     <Box sx={{ display: 'flex', alignItems: 'center' }}>

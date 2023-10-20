@@ -15,16 +15,16 @@ const users: UserDataType[] = [
     id: 1,
     role: 'admin',
     password: 'admin',
-    fullName: 'John Doe',
-    username: 'johndoe',
+    lastName: 'John Doe',
+    firstName: 'johndoe',
     email: 'admin@materio.com'
   },
   {
     id: 2,
     role: 'client',
     password: 'client',
-    fullName: 'Jane Doe',
-    username: 'janedoe',
+    lastName: 'Jane Doe',
+    firstName: 'janedoe',
     email: 'client@materio.com'
   }
 ]
@@ -67,15 +67,15 @@ mock.onPost('/jwt/login').reply(request => {
 
 mock.onPost('/jwt/register').reply(request => {
   if (request.data.length > 0) {
-    const { email, password, username } = JSON.parse(request.data)
+    const { email, password, firstName } = JSON.parse(request.data)
     const isEmailAlreadyInUse = users.find(user => user.email === email)
-    const isUsernameAlreadyInUse = users.find(user => user.username === username)
+    const isUsernameAlreadyInUse = users.find(user => user.firstName === firstName)
     const error = {
       email: isEmailAlreadyInUse ? 'This email is already in use.' : null,
-      username: isUsernameAlreadyInUse ? 'This username is already in use.' : null
+      firstName: isUsernameAlreadyInUse ? 'This firstName is already in use.' : null
     }
 
-    if (!error.username && !error.email) {
+    if (!error.firstName && !error.email) {
       const { length } = users
       let lastIndex = 0
       if (length) {
@@ -85,9 +85,9 @@ mock.onPost('/jwt/register').reply(request => {
         id: lastIndex + 1,
         email,
         password,
-        username,
+        firstName,
         avatar: null,
-        fullName: '',
+        lastName: '',
         role: 'admin'
       }
 

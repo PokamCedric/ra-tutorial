@@ -50,13 +50,13 @@ const data: UsersType = {
   id: 1,
   role: 'admin',
   status: 'active',
-  username: 'gslixby0',
+  firstName: 'gslixby0',
   avatarColor: 'primary',
   country: 'El Salvador',
   company: 'Yotz PVT LTD',
   contact: '(479) 232-9151',
   currentPlan: 'enterprise',
-  fullName: 'Daisy Patterson',
+  lastName: 'Daisy Patterson',
   email: 'gslixby0@abc.net.au',
   avatar: '/images/avatars/4.png'
 }
@@ -109,7 +109,7 @@ const UserViewLeft = () => {
                 <CustomAvatar
                   src={data.avatar}
                   variant='rounded'
-                  alt={data.fullName}
+                  alt={data.lastName}
                   sx={{ width: 120, height: 120, fontWeight: 600, mb: 4 }}
                 />
               ) : (
@@ -119,11 +119,11 @@ const UserViewLeft = () => {
                   color={data.avatarColor as ThemeColor}
                   sx={{ width: 120, height: 120, fontWeight: 600, mb: 4, fontSize: '3rem' }}
                 >
-                  {getInitials(data.fullName)}
+                  {getInitials(data.lastName)}
                 </CustomAvatar>
               )}
               <Typography variant='h6' sx={{ mb: 4 }}>
-                {data.fullName}
+                {data.lastName}
               </Typography>
               <CustomChip
                 skin='light'
@@ -162,8 +162,8 @@ const UserViewLeft = () => {
               <Divider sx={{ my: theme => `${theme.spacing(4)} !important` }} />
               <Box sx={{ pb: 1 }}>
                 <Box sx={{ display: 'flex', mb: 2 }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Username:</Typography>
-                  <Typography variant='body2'>@{data.username}</Typography>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>First Name:</Typography>
+                  <Typography variant='body2'>@{data.firstName}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2 }}>
                   <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Billing Email:</Typography>
@@ -239,13 +239,13 @@ const UserViewLeft = () => {
                 <form>
                   <Grid container spacing={6}>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth label='Full Name' defaultValue={data.fullName} />
+                      <TextField fullWidth label='Last Name' defaultValue={data.lastName} />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <TextField
                         fullWidth
-                        label='Username'
-                        defaultValue={data.username}
+                        label='First Name'
+                        defaultValue={data.firstName}
                         InputProps={{ startAdornment: <InputAdornment position='start'>@</InputAdornment> }}
                       />
                     </Grid>

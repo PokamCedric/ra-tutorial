@@ -20,7 +20,7 @@ const FormLayoutsIcons = () => {
             <Grid item xs={12}>
               <TextField
                 fullWidth
-                label='Full Name'
+                label='Last Name'
                 placeholder='Leonard Carter'
                 InputProps={{
                   startAdornment: (

@@ -21,7 +21,7 @@ interface DataType {
 
 const data: DataType = {
   profileHeader: {
-    fullName: 'John Doe',
+    lastName: 'John Doe',
     location: 'Vatican City',
     joiningDate: 'April 2021',
     designation: 'UX Designer',
@@ -31,7 +31,7 @@ const data: DataType = {
   },
   profile: {
     about: [
-      { property: 'Full Name', value: 'John Doe', icon: 'mdi:account-outline' },
+      { property: 'Last Name', value: 'John Doe', icon: 'mdi:account-outline' },
       { property: 'Status', value: 'active', icon: 'mdi:check' },
       { property: 'Role', value: 'Developer', icon: 'mdi:star-outline' },
       { property: 'Country', value: 'USA', icon: 'mdi:flag-outline' },

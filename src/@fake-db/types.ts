@@ -58,7 +58,7 @@ export type ProjectTableRowType = {
   avatarColor?: ThemeColor
 }
 export type ProfileHeaderType = {
-  fullName: string
+  lastName: string
   coverImg: string
   location: string
   profileImg: string

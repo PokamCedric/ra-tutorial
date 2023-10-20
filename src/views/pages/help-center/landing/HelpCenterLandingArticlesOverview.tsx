@@ -56,7 +56,7 @@ const HelpCenterLandingArticlesOverview = (props: Props) => {
                 sx={{ mt: 3 }}
                 component={Link}
                 variant='outlined'
-                href='/pages/help-center/getting-started/account/changing-your-username'
+                href='/pages/help-center/getting-started/account/changing-your-firstName'
               >
                 Read More
               </Button>

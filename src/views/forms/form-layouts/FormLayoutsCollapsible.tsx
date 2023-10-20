@@ -101,7 +101,7 @@ const FormLayoutsCollapsible = () => {
         <AccordionDetails>
           <Grid container spacing={5}>
             <Grid item xs={12} sm={6}>
-              <TextField fullWidth label='Full Name' placeholder='Leonard Carter' />
+              <TextField fullWidth label='Last Name' placeholder='Leonard Carter' />
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField fullWidth type='number' label='Phone No.' placeholder='123-456-7890' />

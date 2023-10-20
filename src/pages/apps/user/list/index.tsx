@@ -102,7 +102,7 @@ const renderClient = (row: UsersType) => {
         color={row.avatarColor || 'primary'}
         sx={{ mr: 3, width: 30, height: 30, fontSize: '.875rem' }}
       >
-        {getInitials(row.fullName ? row.fullName : 'John Doe')}
+        {getInitials(row.lastName ? row.lastName : 'John Doe')}
       </CustomAvatar>
     )
   }
@@ -175,18 +175,18 @@ const columns: GridColDef[] = [
   {
     flex: 0.2,
     minWidth: 230,
-    field: 'fullName',
+    field: 'lastName',
     headerName: 'User',
     renderCell: ({ row }: CellType) => {
-      const { fullName, username } = row
+      const { lastName, firstName } = row
 
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {renderClient(row)}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <LinkStyled href='/apps/user/view/overview/'>{fullName}</LinkStyled>
+            <LinkStyled href='/apps/user/view/overview/'>{lastName}</LinkStyled>
             <Typography noWrap variant='caption'>
-              {`@${username}`}
+              {`@${firstName}`}
             </Typography>
           </Box>
         </Box>

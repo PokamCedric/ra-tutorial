@@ -24,7 +24,7 @@ interface TableBodyRowType {
   id: number
   name: string
   email: string
-  username: string
+  firstName: string
   avatarSrc?: string
   status: 'active' | 'pending' | 'inactive'
   role: 'editor' | 'author' | 'maintainer' | 'subscriber'
@@ -52,7 +52,7 @@ const rows: TableBodyRowType[] = [
     id: 1,
     role: 'maintainer',
     status: 'inactive',
-    username: '@gslixby0',
+    firstName: '@gslixby0',
     name: 'Joseph Wheeler',
     email: 'nuroani@icpair.com',
     avatarSrc: '/images/avatars/1.png'
@@ -63,14 +63,14 @@ const rows: TableBodyRowType[] = [
     name: 'May Lloyd',
     role: 'subscriber',
     email: 'jeju@ma.co.uk',
-    username: '@hredmore1',
+    firstName: '@hredmore1',
     avatarSrc: '/images/avatars/2.png'
   },
   {
     id: 3,
     status: 'pending',
     role: 'subscriber',
-    username: '@msicely2',
+    firstName: '@msicely2',
     name: 'William Mckinney',
     email: 'cidagehe@nonalbo.com'
   },
@@ -79,7 +79,7 @@ const rows: TableBodyRowType[] = [
     role: 'editor',
     status: 'active',
     name: 'Warren Clarke',
-    username: '@mhurran4',
+    firstName: '@mhurran4',
     email: 'hirasles@zozzetkuv.edu',
     avatarSrc: '/images/avatars/5.png'
   },
@@ -87,7 +87,7 @@ const rows: TableBodyRowType[] = [
     id: 5,
     role: 'maintainer',
     status: 'inactive',
-    username: '@crisby3',
+    firstName: '@crisby3',
     name: 'Isabel Briggs',
     email: 'temiwiho@ohacma.gov'
   },
@@ -97,7 +97,7 @@ const rows: TableBodyRowType[] = [
     status: 'pending',
     email: 'boz@peh.co.uk',
     name: 'Adeline Bennett',
-    username: '@shalstead5',
+    firstName: '@shalstead5',
     avatarSrc: '/images/avatars/4.png'
   },
   {
@@ -106,7 +106,7 @@ const rows: TableBodyRowType[] = [
     status: 'active',
     name: 'Lora Simpson',
     email: 'dude@oco.nl',
-    username: '@bkildayr',
+    firstName: '@bkildayr',
     avatarSrc: '/images/avatars/8.png'
   }
 ]
@@ -171,7 +171,7 @@ const columns: GridColDef[] = [
               {row.name}
             </Typography>
             <Typography variant='body2' sx={{ fontSize: '0.75rem', letterSpacing: '0.4px' }}>
-              {row.username}
+              {row.firstName}
             </Typography>
           </Box>
         </Box>

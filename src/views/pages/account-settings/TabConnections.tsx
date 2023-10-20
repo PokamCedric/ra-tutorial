@@ -23,7 +23,7 @@ interface ConnectedAccountsType {
 interface SocialAccountsType {
   title: string
   logo: string
-  username?: string
+  firstName?: string
   isConnected: boolean
 }
 
@@ -69,13 +69,13 @@ const socialAccountsArr: SocialAccountsType[] = [
   {
     title: 'Twitter',
     isConnected: true,
-    username: '@ThemeSelection',
+    firstName: '@ThemeSelection',
     logo: '/images/logos/twitter.png'
   },
   {
     title: 'Instagram',
     isConnected: true,
-    username: '@ThemeSelection',
+    firstName: '@ThemeSelection',
     logo: '/images/logos/instagram.png'
   },
   {
@@ -164,7 +164,7 @@ const TabConnections = () => {
                           onClick={e => e.preventDefault()}
                           sx={{ color: 'primary.main', textDecoration: 'none' }}
                         >
-                          {account.username}
+                          {account.firstName}
                         </Typography>
                       ) : (
                         <Typography variant='body2' sx={{ color: 'text.disabled' }}>

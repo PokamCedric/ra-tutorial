@@ -74,7 +74,7 @@ const UserProfileHeader = () => {
         >
           <Box sx={{ mb: [6, 0], display: 'flex', flexDirection: 'column', alignItems: ['center', 'flex-start'] }}>
             <Typography variant='h5' sx={{ mb: 4 }}>
-              {data.fullName}
+              {data.lastName}
             </Typography>
             <Box
               sx={{
