@@ -631,7 +631,7 @@ const UserViewBilling = () => {
                       <TableRow>
                         <TableCell>
                           <Typography variant='subtitle2' sx={{ color: 'text.primary' }}>
-                            Contact:
+                            Phone:
                           </Typography>
                         </TableCell>
                         <TableCell>+1(609) 933-44-22</TableCell>
@@ -718,7 +718,7 @@ const UserViewBilling = () => {
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
-                    <TextField fullWidth defaultValue='+1(609) 933-44-22' label='Contact' />
+                    <TextField fullWidth defaultValue='+1(609) 933-44-22' label='Phone' />
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <FormControl fullWidth>

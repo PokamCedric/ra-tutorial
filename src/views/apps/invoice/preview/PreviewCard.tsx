@@ -186,7 +186,7 @@ const PreviewCard = ({ data }: Props) => {
                 {data.invoice.address}
               </Typography>
               <Typography variant='body2' sx={{ mb: 2 }}>
-                {data.invoice.contact}
+                {data.invoice.phone}
               </Typography>
               <Typography variant='body2' sx={{ mb: 2 }}>
                 {data.invoice.companyEmail}

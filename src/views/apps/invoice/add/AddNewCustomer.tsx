@@ -37,7 +37,7 @@ interface FormData {
   company: string
   address: string
   country: string
-  contact: string
+  phone: string
 }
 
 const Header = styled(Box)<BoxProps>(({ theme }) => ({
@@ -52,7 +52,7 @@ const schema = yup.object().shape({
   name: yup.string().required(),
   email: yup.string().email().required(),
   company: yup.string().required(),
-  contact: yup.string().min(10).max(10).required(),
+  phone: yup.string().min(10).max(10).required(),
   address: yup.string().max(120).required()
 })
 
@@ -64,15 +64,15 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
     formState: { errors }
   } = useForm({
     resolver: yupResolver(schema),
-    defaultValues: { name: '', email: '', company: '', address: '', country: 'USA', contact: '' }
+    defaultValues: { name: '', email: '', company: '', address: '', country: 'USA', phone: '' }
   })
 
   const onSubmit = (data: FormData) => {
-    const { address, company, contact, country, email, name } = data
+    const { address, company, phone, country, email, name } = data
     const finalData = {
       name,
       country,
-      contact,
+      phone,
       company,
       address,
       companyEmail: email
@@ -83,12 +83,12 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
     setSelectedClient(finalData)
 
     toggle()
-    reset({ name: '', email: '', company: '', address: '', country: 'USA', contact: '' })
+    reset({ name: '', email: '', company: '', address: '', country: 'USA', phone: '' })
   }
 
   const handleDrawerClose = () => {
     toggle()
-    reset({ name: '', email: '', company: '', address: '', country: 'USA', contact: '' })
+    reset({ name: '', email: '', company: '', address: '', country: 'USA', phone: '' })
   }
 
   return (
@@ -226,7 +226,7 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
         </FormControl>
         <FormControl fullWidth sx={{ mb: 6 }}>
           <Controller
-            name='contact'
+            name='phone'
             control={control}
             rules={{ required: true }}
             render={({ field: { value, onChange } }) => (
@@ -235,15 +235,15 @@ const AddNewCustomer = ({ open, toggle, setSelectedClient, clients, setClients }
                 value={value}
                 variant='outlined'
                 onChange={onChange}
-                label='Contact Number'
+                label='Phone Number'
                 placeholder='763-242-9206'
-                error={Boolean(errors.contact)}
+                error={Boolean(errors.phone)}
               />
             )}
           />
-          {errors.contact && (
-            <FormHelperText sx={{ color: 'error.main' }} id='invoice-contact-error'>
-              {errors.contact.message}
+          {errors.phone && (
+            <FormHelperText sx={{ color: 'error.main' }} id='invoice-phone-error'>
+              {errors.phone.message}
             </FormHelperText>
           )}
         </FormControl>

@@ -307,7 +307,7 @@ const AddCard = (props: Props) => {
                   {selectedClient.address}
                 </Typography>
                 <Typography variant='body2' sx={{ mb: 1 }}>
-                  {selectedClient.contact}
+                  {selectedClient.phone}
                 </Typography>
                 <Typography variant='body2' sx={{ mb: 1 }}>
                   {selectedClient.companyEmail}

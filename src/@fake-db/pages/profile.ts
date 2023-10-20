@@ -38,7 +38,7 @@ const data: DataType = {
       { property: 'Language', value: 'English', icon: 'mdi:translate' }
     ],
     contacts: [
-      { property: 'Contact', value: '(123) 456-7890', icon: 'mdi:phone-outline' },
+      { property: 'Phone', value: '(123) 456-7890', icon: 'mdi:phone-outline' },
       { property: 'Skype', value: 'john.doe', icon: 'mdi:message-outline' },
       { property: 'Email', value: 'john.doe@example.com', icon: 'mdi:email-outline' }
     ],

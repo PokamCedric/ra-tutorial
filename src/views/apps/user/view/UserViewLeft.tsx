@@ -54,7 +54,7 @@ const data: UsersType = {
   avatarColor: 'primary',
   country: 'El Salvador',
   company: 'Yotz PVT LTD',
-  contact: '(479) 232-9151',
+  phone: '(479) 232-9151',
   currentPlan: 'enterprise',
   lastName: 'Daisy Patterson',
   email: 'gslixby0@abc.net.au',
@@ -186,8 +186,8 @@ const UserViewLeft = () => {
                   <Typography variant='body2'>Tax-8894</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2 }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Contact:</Typography>
-                  <Typography variant='body2'>+1 {data.contact}</Typography>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>phone:</Typography>
+                  <Typography variant='body2'>+1 {data.phone}</Typography>
                 </Box>
                 <Box sx={{ display: 'flex', mb: 2 }}>
                   <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Language:</Typography>
@@ -271,7 +271,7 @@ const UserViewLeft = () => {
                       <TextField fullWidth label='TAX ID' defaultValue='Tax-8894' />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                      <TextField fullWidth label='Contact' defaultValue={`+1 ${data.contact}`} />
+                      <TextField fullWidth label='phone' defaultValue={`+1 ${data.phone}`} />
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <FormControl fullWidth>

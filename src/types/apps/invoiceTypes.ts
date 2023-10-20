@@ -9,7 +9,7 @@ export type InvoiceClientType = {
   address: string
   company: string
   country: string
-  contact: string
+  phone: string
   companyEmail: string
 }
 
@@ -23,7 +23,7 @@ export type InvoiceType = {
   address: string
   company: string
   country: string
-  contact: string
+  phone: string
   avatarColor?: string
   issuedDate: string
   companyEmail: string

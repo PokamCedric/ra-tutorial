@@ -198,7 +198,7 @@ const InvoicePrint = ({ id }: InvoiceLayoutProps) => {
               {invoice.address}
             </Typography>
             <Typography variant='body2' sx={{ mb: 2 }}>
-              {invoice.contact}
+              {invoice.phone}
             </Typography>
             <Typography variant='body2' sx={{ mb: 2 }}>
               {invoice.companyEmail}

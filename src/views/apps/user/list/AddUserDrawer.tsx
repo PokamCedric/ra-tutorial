@@ -39,7 +39,7 @@ interface UserData {
   email: string
   profession: string
   address: string
-  contact: number
+  phone: number
   lastName: string
   firstName: string
 }
@@ -66,10 +66,10 @@ const schema = yup.object().shape({
   profession: yup.string().required(),
   address: yup.string().required(),
   email: yup.string().email().required(),
-  contact: yup
+  phone: yup
     .number()
-    .typeError('Contact Number field is required')
-    .min(10, obj => showErrors('Contact Number', obj.value.length, obj.min))
+    .typeError('Phone Number field is required')
+    .min(10, obj => showErrors('Phone Number', obj.value.length, obj.min))
     .required(),
   lastName: yup
     .string()
@@ -87,7 +87,7 @@ const defaultValues = {
   address: '',
   lastName: '',
   firstName: '',
-  contact: Number('')
+  phone: Number('')
 }
 
 const SidebarAddUser = (props: SidebarAddUserType) => {
@@ -137,7 +137,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
   const handleClose = () => {
     setPlan('basic')
     setRole('subscriber')
-    setValue('contact', Number(''))
+    setValue('phone', Number(''))
     toggle()
     reset()
   }
@@ -247,21 +247,21 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
           </FormControl>
           <FormControl fullWidth sx={{ mb: 6 }}>
             <Controller
-              name='contact'
+              name='phone'
               control={control}
               rules={{ required: true }}
               render={({ field: { value, onChange } }) => (
                 <TextField
                   type='number'
                   value={value}
-                  label='Contact'
+                  label='Phone'
                   onChange={onChange}
                   placeholder='(397) 294-5153'
-                  error={Boolean(errors.contact)}
+                  error={Boolean(errors.phone)}
                 />
               )}
             />
-            {errors.contact && <FormHelperText sx={{ color: 'error.main' }}>{errors.contact.message}</FormHelperText>}
+            {errors.phone && <FormHelperText sx={{ color: 'error.main' }}>{errors.phone.message}</FormHelperText>}
           </FormControl>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <Button size='large' type='submit' variant='contained' sx={{ mr: 3 }}>
