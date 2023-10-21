@@ -2,8 +2,7 @@
 import { Dispatch } from 'redux'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-// ** Axios Imports
-import axios from 'axios'
+import axiosService from 'src/services/axios.service'
 
 interface DataParams {
   q: string
@@ -17,9 +16,11 @@ interface Redux {
   dispatch: Dispatch<any>
 }
 
+const axiosUser = axiosService('apps/users')
+
 // ** Fetch Users
 export const fetchData = createAsyncThunk('appUsers/fetchData', async (params: DataParams) => {
-  const response = await axios.get('/apps/users/list', {
+  const response = await axiosUser.getMany('list', {
     params
   })
 
@@ -30,8 +31,8 @@ export const fetchData = createAsyncThunk('appUsers/fetchData', async (params: D
 export const addUser = createAsyncThunk(
   'appUsers/addUser',
   async (data: { [key: string]: number | string }, { getState, dispatch }: Redux) => {
-    const response = await axios.post('/apps/users/add-user', {
-      data
+    const response = await axiosUser.create('add-user', {
+      data: data
     })
     dispatch(fetchData(getState().user.params))
 
@@ -43,8 +44,8 @@ export const addUser = createAsyncThunk(
 export const deleteUser = createAsyncThunk(
   'appUsers/deleteUser',
   async (id: number | string, { getState, dispatch }: Redux) => {
-    const response = await axios.delete('/apps/users/delete', {
-      data: id
+    const response = await axiosUser.delete('delete', {
+      id: id
     })
     dispatch(fetchData(getState().user.params))
 
