@@ -34,7 +34,7 @@ const data: DataType = {
       { property: 'Last Name', value: 'John Doe', icon: 'mdi:account-outline' },
       { property: 'Status', value: 'active', icon: 'mdi:check' },
       { property: 'Role', value: 'Developer', icon: 'mdi:star-outline' },
-      { property: 'Country', value: 'USA', icon: 'mdi:flag-outline' },
+      { property: 'Address', value: 'USA', icon: 'mdi:flag-outline' },
       { property: 'Language', value: 'English', icon: 'mdi:translate' }
     ],
     contacts: [

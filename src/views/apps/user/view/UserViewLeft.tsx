@@ -52,7 +52,7 @@ const data: UsersType = {
   status: 'active',
   firstName: 'gslixby0',
   avatarColor: 'primary',
-  country: 'El Salvador',
+  address: 'El Salvador',
   company: 'Yotz PVT LTD',
   phone: '(479) 232-9151',
   currentPlan: 'enterprise',
@@ -194,8 +194,8 @@ const UserViewLeft = () => {
                   <Typography variant='body2'>English</Typography>
                 </Box>
                 <Box sx={{ display: 'flex' }}>
-                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Country:</Typography>
-                  <Typography variant='body2'>{data.country}</Typography>
+                  <Typography sx={{ mr: 2, fontWeight: 500, fontSize: '0.875rem' }}>Address:</Typography>
+                  <Typography variant='body2'>{data.address}</Typography>
                 </Box>
               </Box>
             </CardContent>
@@ -293,12 +293,12 @@ const UserViewLeft = () => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                       <FormControl fullWidth>
-                        <InputLabel id='user-view-country-label'>Country</InputLabel>
+                        <InputLabel id='user-view-address-label'>Address</InputLabel>
                         <Select
-                          label='Country'
+                          label='Address'
                           defaultValue='USA'
-                          id='user-view-country'
-                          labelId='user-view-country-label'
+                          id='user-view-address'
+                          labelId='user-view-address-label'
                         >
                           <MenuItem value='USA'>USA</MenuItem>
                           <MenuItem value='UK'>UK</MenuItem>
