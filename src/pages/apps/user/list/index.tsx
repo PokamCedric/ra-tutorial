@@ -21,6 +21,7 @@ import FormControl from '@mui/material/FormControl'
 import CardContent from '@mui/material/CardContent'
 import { DataGrid, GridColDef } from '@mui/x-data-grid'
 import Select, { SelectChangeEvent } from '@mui/material/Select'
+import test from 'src/pages/test/axios'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -262,7 +263,10 @@ const columns: GridColDef[] = [
   }
 ]
 
-const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const UserList = ({ apiData, userData }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  console.log('second')
+  console.log(userData)
+
   // ** State
   const [role, setRole] = useState<string>('')
   const [plan, setPlan] = useState<string>('')
@@ -409,10 +413,15 @@ const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =
 export const getStaticProps: GetStaticProps = async () => {
   const res = await axios.get('/cards/statistics')
   const apiData: CardStatsType = res.data
+  // TODO: Just for testing: the backend is bookstore
+  const url = 'http://localhost:8080/users'
+  const response = await fetch(url) // I could also use axios.get(url)
+  const userData = await response.json()
 
   return {
     props: {
-      apiData
+      apiData,
+      userData
     }
   }
 }
