@@ -2,7 +2,7 @@
 import { Dispatch } from 'redux'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-import axiosService from 'src/services/axios.service'
+import api from 'src/api/user/user.api'
 
 interface DataParams {
   q: string
@@ -16,14 +16,9 @@ interface Redux {
   dispatch: Dispatch<any>
 }
 
-const axiosUser = axiosService('apps/users')
-
 // ** Fetch Users
 export const fetchData = createAsyncThunk('appUsers/fetchData', async (params: DataParams) => {
-  const response = await axiosUser.getMany('list', {
-    params
-  })
-
+  const response = await api.getUsers(params)
   return response.data
 })
 
@@ -31,9 +26,7 @@ export const fetchData = createAsyncThunk('appUsers/fetchData', async (params: D
 export const addUser = createAsyncThunk(
   'appUsers/addUser',
   async (data: { [key: string]: number | string }, { getState, dispatch }: Redux) => {
-    const response = await axiosUser.create('add-user', {
-      data: data
-    })
+    const response = await api.addUser(data)
     dispatch(fetchData(getState().user.params))
 
     return response.data
@@ -44,9 +37,7 @@ export const addUser = createAsyncThunk(
 export const deleteUser = createAsyncThunk(
   'appUsers/deleteUser',
   async (id: number | string, { getState, dispatch }: Redux) => {
-    const response = await axiosUser.delete('delete', {
-      id: id
-    })
+    const response = await api.deleteUser(id)
     dispatch(fetchData(getState().user.params))
 
     return response.data
@@ -64,6 +55,7 @@ export const appUsersSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder.addCase(fetchData.fulfilled, (state, action) => {
+      console.log('action.payload', action.payload)
       state.data = action.payload.users
       state.total = action.payload.total
       state.params = action.payload.params
