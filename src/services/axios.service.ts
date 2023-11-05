@@ -4,10 +4,7 @@ import axios from 'axios'
 export default (resource: string) => ({
   getList: async (path: string) => axios.get(`/${resource}/${path}`),
 
-  getMany: (path: string, params: any) =>
-    axios.get(`${resource}/${path}`, {
-      params: params
-    }),
+  getMany: (path: string, params: any) => axios.get(`${resource}/${path}`, { params: params }),
 
   getOne: (path: string, params: any) => axios.get(`${resource}/${path}/${params.id}`),
 
@@ -15,5 +12,5 @@ export default (resource: string) => ({
 
   create: (path: string, params: any) => axios.post(`${resource}/${path}/`, params.data),
 
-  delete: (path: string, params: any) => axios.delete(`${resource}/${path}/${params.id}`)
+  delete: (path: string, id: string | number) => axios.delete(`${resource}/${path}/${id}`)
 })

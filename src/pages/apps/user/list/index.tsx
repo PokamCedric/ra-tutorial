@@ -258,14 +258,11 @@ const columns: GridColDef[] = [
     sortable: false,
     field: 'actions',
     headerName: 'Actions',
-    renderCell: ({ row }: CellType) => <RowOptions id={row.id} />
+    renderCell: ({ row }: CellType) => <RowOptions id={row._id} />
   }
 ]
 
-const UserList = ({ apiData, userData }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  console.log('second')
-  console.log(userData)
-
+const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // ** State
   const [role, setRole] = useState<string>('')
   const [plan, setPlan] = useState<string>('')
@@ -412,15 +409,10 @@ const UserList = ({ apiData, userData }: InferGetStaticPropsType<typeof getStati
 export const getStaticProps: GetStaticProps = async () => {
   const res = await axios.get('/cards/statistics')
   const apiData: CardStatsType = res.data
-  // TODO: Just for testing: the backend is bookstore
-  const url = 'http://localhost:8080/users'
-  const response = await fetch(url) // I could also use axios.get(url)
-  const userData = await response.json()
 
   return {
     props: {
-      apiData,
-      userData
+      apiData
     }
   }
 }

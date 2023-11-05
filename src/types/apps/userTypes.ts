@@ -2,7 +2,7 @@
 import { ThemeColor } from 'src/@core/layouts/types'
 
 export type UsersType = {
-  id: number
+  _id: string | number
   role: string
   email: string
   status: string
@@ -17,7 +17,7 @@ export type UsersType = {
 }
 
 export type ProjectListDataType = {
-  id: number
+  id: string | number
   img: string
   hours: string
   totalTask: string

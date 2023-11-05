@@ -7,7 +7,7 @@ import { UsersType, ProjectListDataType } from 'src/types/apps/userTypes'
 const data: { users: UsersType[] } = {
   users: [
     {
-      id: 1,
+      _id: 1,
       lastName: 'Galen Slixby',
       company: 'Yotz PVT LTD',
       role: 'editor',
@@ -21,7 +21,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'primary'
     },
     {
-      id: 2,
+      _id: 2,
       lastName: 'Halsey Redmore',
       company: 'Skinder PVT LTD',
       role: 'author',
@@ -34,7 +34,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/3.png'
     },
     {
-      id: 3,
+      _id: 3,
       lastName: 'Marjory Sicely',
       company: 'Oozz PVT LTD',
       role: 'maintainer',
@@ -47,7 +47,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/1.png'
     },
     {
-      id: 4,
+      _id: 4,
       lastName: 'Cyrill Risby',
       company: 'Oozz PVT LTD',
       role: 'maintainer',
@@ -60,7 +60,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/3.png'
     },
     {
-      id: 5,
+      _id: 5,
       lastName: 'Maggy Hurran',
       company: 'Aimbo PVT LTD',
       role: 'subscriber',
@@ -73,7 +73,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/1.png'
     },
     {
-      id: 6,
+      _id: 6,
       lastName: 'Silvain Halstead',
       company: 'Jaxbean PVT LTD',
       role: 'author',
@@ -87,7 +87,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'error'
     },
     {
-      id: 7,
+      _id: 7,
       lastName: 'Breena Gallemore',
       company: 'Jazzy PVT LTD',
       role: 'subscriber',
@@ -101,7 +101,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'warning'
     },
     {
-      id: 8,
+      _id: 8,
       lastName: 'Kathryne Liger',
       company: 'Pixoboo PVT LTD',
       role: 'author',
@@ -114,7 +114,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/4.png'
     },
     {
-      id: 9,
+      _id: 9,
       lastName: 'Franz Scotfurth',
       company: 'Tekfly PVT LTD',
       role: 'subscriber',
@@ -127,7 +127,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/2.png'
     },
     {
-      id: 10,
+      _id: 10,
       lastName: 'Jillene Bellany',
       company: 'Gigashots PVT LTD',
       role: 'maintainer',
@@ -140,7 +140,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/5.png'
     },
     {
-      id: 11,
+      _id: 11,
       lastName: 'Jonah Wharlton',
       company: 'Eare PVT LTD',
       role: 'subscriber',
@@ -153,7 +153,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/4.png'
     },
     {
-      id: 12,
+      _id: 12,
       lastName: 'Seth Hallam',
       company: 'Yakitri PVT LTD',
       role: 'subscriber',
@@ -166,7 +166,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/5.png'
     },
     {
-      id: 13,
+      _id: 13,
       lastName: 'Yoko Pottie',
       company: 'Leenti PVT LTD',
       role: 'subscriber',
@@ -179,7 +179,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/7.png'
     },
     {
-      id: 14,
+      _id: 14,
       lastName: 'Maximilianus Krause',
       company: 'Digitube PVT LTD',
       role: 'author',
@@ -192,7 +192,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/6.png'
     },
     {
-      id: 15,
+      _id: 15,
       lastName: 'Zsazsa McCleverty',
       company: 'Kaymbo PVT LTD',
       role: 'maintainer',
@@ -205,7 +205,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/2.png'
     },
     {
-      id: 16,
+      _id: 16,
       lastName: 'Bentlee Emblin',
       company: 'Yambee PVT LTD',
       role: 'author',
@@ -218,7 +218,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/6.png'
     },
     {
-      id: 17,
+      _id: 17,
       lastName: 'Brockie Myles',
       company: 'Wikivu PVT LTD',
       role: 'maintainer',
@@ -232,7 +232,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'success'
     },
     {
-      id: 18,
+      _id: 18,
       lastName: 'Bertha Biner',
       company: 'Twinte PVT LTD',
       role: 'editor',
@@ -245,7 +245,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/7.png'
     },
     {
-      id: 19,
+      _id: 19,
       lastName: 'Travus Bruntjen',
       company: 'Cogidoo PVT LTD',
       role: 'admin',
@@ -259,7 +259,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'primary'
     },
     {
-      id: 20,
+      _id: 20,
       lastName: 'Wesley Burland',
       company: 'Bubblemix PVT LTD',
       role: 'editor',
@@ -272,7 +272,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/6.png'
     },
     {
-      id: 21,
+      _id: 21,
       lastName: 'Selina Kyle',
       company: 'Wayne Enterprises',
       role: 'admin',
@@ -285,7 +285,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/1.png'
     },
     {
-      id: 22,
+      _id: 22,
       lastName: 'Jameson Lyster',
       company: 'Quaxo PVT LTD',
       role: 'editor',
@@ -298,7 +298,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/8.png'
     },
     {
-      id: 23,
+      _id: 23,
       lastName: 'Kare Skitterel',
       company: 'Ainyx PVT LTD',
       role: 'maintainer',
@@ -311,7 +311,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/3.png'
     },
     {
-      id: 24,
+      _id: 24,
       lastName: 'Cleavland Hatherleigh',
       company: 'Flipopia PVT LTD',
       role: 'admin',
@@ -324,7 +324,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/2.png'
     },
     {
-      id: 25,
+      _id: 25,
       lastName: 'Adeline Micco',
       company: 'Topicware PVT LTD',
       role: 'admin',
@@ -338,7 +338,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'error'
     },
     {
-      id: 26,
+      _id: 26,
       lastName: 'Hugh Hasson',
       company: 'Skinix PVT LTD',
       role: 'admin',
@@ -351,7 +351,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/4.png'
     },
     {
-      id: 27,
+      _id: 27,
       lastName: 'Germain Jacombs',
       company: 'Youopia PVT LTD',
       role: 'editor',
@@ -364,7 +364,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/5.png'
     },
     {
-      id: 28,
+      _id: 28,
       lastName: 'Bree Kilday',
       company: 'Jetpulse PVT LTD',
       role: 'maintainer',
@@ -378,7 +378,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'warning'
     },
     {
-      id: 29,
+      _id: 29,
       lastName: 'Candice Pinyon',
       company: 'Kare PVT LTD',
       role: 'maintainer',
@@ -391,7 +391,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/7.png'
     },
     {
-      id: 30,
+      _id: 30,
       lastName: 'Isabel Mallindine',
       company: 'Voomm PVT LTD',
       role: 'subscriber',
@@ -405,7 +405,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'info'
     },
     {
-      id: 31,
+      _id: 31,
       lastName: 'Gwendolyn Meineken',
       company: 'Oyondu PVT LTD',
       role: 'admin',
@@ -418,7 +418,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/1.png'
     },
     {
-      id: 32,
+      _id: 32,
       lastName: 'Rafaellle Snowball',
       company: 'Fivespan PVT LTD',
       role: 'editor',
@@ -431,7 +431,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/5.png'
     },
     {
-      id: 33,
+      _id: 33,
       lastName: 'Rochette Emer',
       company: 'Thoughtworks PVT LTD',
       role: 'admin',
@@ -444,7 +444,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/8.png'
     },
     {
-      id: 34,
+      _id: 34,
       lastName: 'Ophelie Fibbens',
       company: 'Jaxbean PVT LTD',
       role: 'subscriber',
@@ -457,7 +457,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/4.png'
     },
     {
-      id: 35,
+      _id: 35,
       lastName: 'Stephen MacGilfoyle',
       company: 'Browseblab PVT LTD',
       role: 'maintainer',
@@ -471,7 +471,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'error'
     },
     {
-      id: 36,
+      _id: 36,
       lastName: 'Bradan Rosebotham',
       company: 'Agivu PVT LTD',
       role: 'subscriber',
@@ -485,7 +485,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'success'
     },
     {
-      id: 37,
+      _id: 37,
       lastName: 'Skip Hebblethwaite',
       company: 'Katz PVT LTD',
       role: 'admin',
@@ -498,7 +498,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/1.png'
     },
     {
-      id: 38,
+      _id: 38,
       lastName: 'Moritz Piccard',
       company: 'Twitternation PVT LTD',
       role: 'maintainer',
@@ -511,7 +511,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/1.png'
     },
     {
-      id: 39,
+      _id: 39,
       lastName: 'Tyne Widmore',
       company: 'Yombu PVT LTD',
       role: 'subscriber',
@@ -525,7 +525,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'primary'
     },
     {
-      id: 40,
+      _id: 40,
       lastName: 'Florenza Desporte',
       company: 'Kamba PVT LTD',
       role: 'author',
@@ -538,7 +538,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/6.png'
     },
     {
-      id: 41,
+      _id: 41,
       lastName: 'Edwina Baldetti',
       company: 'Dazzlesphere PVT LTD',
       role: 'maintainer',
@@ -552,7 +552,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'info'
     },
     {
-      id: 42,
+      _id: 42,
       lastName: 'Benedetto Rossiter',
       company: 'Mybuzz PVT LTD',
       role: 'editor',
@@ -566,7 +566,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'warning'
     },
     {
-      id: 43,
+      _id: 43,
       lastName: 'Micaela McNirlan',
       company: 'Tambee PVT LTD',
       role: 'admin',
@@ -580,7 +580,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'error'
     },
     {
-      id: 44,
+      _id: 44,
       lastName: 'Vladamir Koschek',
       company: 'Centimia PVT LTD',
       role: 'author',
@@ -594,7 +594,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'success'
     },
     {
-      id: 45,
+      _id: 45,
       lastName: 'Corrie Perot',
       company: 'Flipopia PVT LTD',
       role: 'subscriber',
@@ -607,7 +607,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/3.png'
     },
     {
-      id: 46,
+      _id: 46,
       lastName: 'Saunder Offner',
       company: 'Skalith PVT LTD',
       role: 'maintainer',
@@ -621,7 +621,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'primary'
     },
     {
-      id: 47,
+      _id: 47,
       lastName: 'Karena Courtliff',
       company: 'Feedfire PVT LTD',
       role: 'admin',
@@ -634,7 +634,7 @@ const data: { users: UsersType[] } = {
       avatar: '/images/avatars/1.png'
     },
     {
-      id: 48,
+      _id: 48,
       lastName: 'Onfre Wind',
       company: 'Thoughtmix PVT LTD',
       role: 'admin',
@@ -648,7 +648,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'error'
     },
     {
-      id: 49,
+      _id: 49,
       lastName: 'Paulie Durber',
       company: 'Babbleblab PVT LTD',
       role: 'subscriber',
@@ -662,7 +662,7 @@ const data: { users: UsersType[] } = {
       avatarColor: 'warning'
     },
     {
-      id: 50,
+      _id: 50,
       lastName: 'Beverlie Krabbe',
       company: 'Kaymbo PVT LTD',
       role: 'editor',
@@ -755,7 +755,7 @@ mock.onPost('/apps/users/add-user').reply(config => {
   // Get event from post data
   const user = JSON.parse(config.data).data
 
-  const lastId = Math.max(...data.users.map(u => u.id), 0)
+  const lastId = Math.max(...data.users.map(u => u._id), 0)
 
   user.id = lastId + 1
 
@@ -799,7 +799,7 @@ mock.onDelete('/apps/users/delete').reply(config => {
   // Get user id from URL
   const userId = config.data
 
-  const userIndex = data.users.findIndex(t => t.id === userId)
+  const userIndex = data.users.findIndex(t => t._id === userId)
   data.users.splice(userIndex, 1)
 
   return [200]
