@@ -35,7 +35,7 @@ const renderClient = (params: GridRenderCellParams) => {
   const states = ['success', 'error', 'warning', 'info', 'primary', 'secondary']
   const color = states[stateNum]
 
-  if (row.avatar.length) {
+  if (row?.avatar?.length) {
     return <CustomAvatar src={`/images/avatars/${row.avatar}`} sx={{ mr: 3, width: '1.875rem', height: '1.875rem' }} />
   } else {
     return (

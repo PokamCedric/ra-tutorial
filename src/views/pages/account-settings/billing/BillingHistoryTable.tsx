@@ -82,7 +82,7 @@ const invoiceStatusObj: InvoiceStatusObj = {
 
 // ** renders client column
 const renderClient = (row: InvoiceType) => {
-  if (row.avatar.length) {
+  if (row?.avatar?.length) {
     return <CustomAvatar src={row.avatar} sx={{ mr: 3, width: '1.875rem', height: '1.875rem' }} />
   } else {
     return (

@@ -66,7 +66,7 @@ const userStatusObj: UserStatusType = {
 
 // ** renders client column
 const renderClient = (row: UsersType) => {
-  if (row.avatar.length) {
+  if (row?.avatar?.length) {
     return <CustomAvatar src={row.avatar} sx={{ mr: 3, width: 30, height: 30 }} />
   } else {
     return (
