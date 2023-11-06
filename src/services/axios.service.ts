@@ -10,7 +10,7 @@ export default (resource: string) => ({
 
   update: (path: string, params: any) => axios.put(`${resource}/${path}/${params.id}`, params.data),
 
-  create: (path: string, params: any) => axios.post(`${resource}/${path}/`, params.data),
+  create: (path: string, params: any) => axios.post(`${resource}/${path}/`, params),
 
   delete: (path: string, id: string | number) => axios.delete(`${resource}/${path}/${id}`)
 })
