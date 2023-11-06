@@ -208,6 +208,19 @@ const columns: GridColDef[] = [
   },
   {
     flex: 0.15,
+    minWidth: 120,
+    headerName: 'Phone',
+    field: 'Phone',
+    renderCell: ({ row }: CellType) => {
+      return (
+        <Typography noWrap sx={{ textTransform: 'capitalize' }}>
+          {row.phone}
+        </Typography>
+      )
+    }
+  },
+  {
+    flex: 0.15,
     field: 'role',
     minWidth: 150,
     headerName: 'Role',
@@ -278,10 +291,6 @@ const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =
 
   const handleRoleChange = useCallback((e: SelectChangeEvent) => {
     setRole(e.target.value)
-  }, [])
-
-  const handlePlanChange = useCallback((e: SelectChangeEvent) => {
-    setPlan(e.target.value)
   }, [])
 
   const handleStatusChange = useCallback((e: SelectChangeEvent) => {
@@ -355,6 +364,7 @@ const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) =
           <Divider />
           <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddUserDrawer} />
           <DataGrid
+            getRowId={row => row._id}
             autoHeight
             rows={store.data}
             columns={columns}
