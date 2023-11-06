@@ -8,7 +8,6 @@ interface DataParams {
   q: string
   role: string
   status: string
-  currentPlan: string
 }
 function getUsers(params: DataParams) {
   return axiosUser.getMany(test ? '' : 'list', params)

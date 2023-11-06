@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 export default (resource: string) => ({
-  getList: async (path: string) => axios.get(`/${resource}/${path}`),
+  getList: async (path: string) => axios.get(`${resource}/${path}`),
 
   getMany: (path: string, params: any) => axios.get(`${resource}/${path}`, { params: params }),
 

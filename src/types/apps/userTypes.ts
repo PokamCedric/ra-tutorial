@@ -12,7 +12,6 @@ export type UsersType = {
   phone: string
   lastName: string
   firstName: string
-  currentPlan: string
   avatarColor?: ThemeColor
 }
 

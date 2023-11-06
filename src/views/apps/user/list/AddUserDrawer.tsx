@@ -128,7 +128,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
         }
       })
     } else {
-      dispatch(addUser({ ...data, role, currentPlan: plan }))
+      dispatch(addUser({ ...data, role }))
       toggle()
       reset()
     }
@@ -191,7 +191,9 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
                 />
               )}
             />
-            {errors.firstName && <FormHelperText sx={{ color: 'error.main' }}>{errors.firstName.message}</FormHelperText>}
+            {errors.firstName && (
+              <FormHelperText sx={{ color: 'error.main' }}>{errors.firstName.message}</FormHelperText>
+            )}
           </FormControl>
           <FormControl fullWidth sx={{ mb: 6 }}>
             <Controller
@@ -226,7 +228,9 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
                 />
               )}
             />
-            {errors.profession && <FormHelperText sx={{ color: 'error.main' }}>{errors.profession.message}</FormHelperText>}
+            {errors.profession && (
+              <FormHelperText sx={{ color: 'error.main' }}>{errors.profession.message}</FormHelperText>
+            )}
           </FormControl>
           <FormControl fullWidth sx={{ mb: 6 }}>
             <Controller

@@ -47,7 +47,7 @@ interface ColorsType {
 }
 
 const data: UsersType = {
-  id: 1,
+  _id: 1,
   role: 'admin',
   status: 'active',
   firstName: 'gslixby0',
@@ -55,7 +55,6 @@ const data: UsersType = {
   address: 'El Salvador',
   company: 'Yotz PVT LTD',
   phone: '(479) 232-9151',
-  currentPlan: 'enterprise',
   lastName: 'Daisy Patterson',
   email: 'gslixby0@abc.net.au',
   avatar: '/images/avatars/4.png'

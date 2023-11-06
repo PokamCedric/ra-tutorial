@@ -142,19 +142,6 @@ const columns: GridColDef[] = [
     }
   },
   {
-    flex: 0.15,
-    minWidth: 120,
-    headerName: 'Plan',
-    field: 'currentPlan',
-    renderCell: ({ row }: CellType) => {
-      return (
-        <Typography noWrap sx={{ textTransform: 'capitalize' }}>
-          {row.currentPlan}
-        </Typography>
-      )
-    }
-  },
-  {
     flex: 0.1,
     minWidth: 110,
     field: 'status',
@@ -200,11 +187,10 @@ const UserList = () => {
       fetchData({
         role: '',
         q: value,
-        status: '',
-        currentPlan: plan
+        status: ''
       })
     )
-  }, [dispatch, plan, value])
+  }, [dispatch, value])
 
   const handleFilter = useCallback((val: string) => {
     setValue(val)
