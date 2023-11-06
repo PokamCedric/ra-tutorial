@@ -63,31 +63,31 @@ const Header = styled(Box)<BoxProps>(({ theme }) => ({
 }))
 
 const schema = yup.object().shape({
-  profession: yup.string().required(),
-  address: yup.string().required(),
+  firstName: yup
+    .string()
+    .min(3, obj => showErrors('First Name', obj.value.length, obj.min))
+    .required(),
+  lastName: yup
+    .string()
+    .min(3, obj => showErrors('First Name', obj.value.length, obj.min))
+    .required(),
   email: yup.string().email().required(),
   phone: yup
     .number()
     .typeError('Phone Number field is required')
     .min(10, obj => showErrors('Phone Number', obj.value.length, obj.min))
     .required(),
-  lastName: yup
-    .string()
-    .min(3, obj => showErrors('First Name', obj.value.length, obj.min))
-    .required(),
-  firstName: yup
-    .string()
-    .min(3, obj => showErrors('First Name', obj.value.length, obj.min))
-    .required()
+  profession: yup.string(),
+  address: yup.string()
 })
 
 const defaultValues = {
-  email: '',
-  profession: '',
-  address: '',
-  lastName: '',
   firstName: '',
-  phone: Number('')
+  lastName: '',
+  email: '',
+  phone: Number(''),
+  profession: '',
+  address: ''
 }
 
 const SidebarAddUser = (props: SidebarAddUserType) => {
@@ -95,7 +95,6 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
   const { open, toggle } = props
 
   // ** State
-  const [plan, setPlan] = useState<string>('basic')
   const [role, setRole] = useState<string>('subscriber')
 
   // ** Hooks
@@ -135,7 +134,6 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
   }
 
   const handleClose = () => {
-    setPlan('basic')
     setRole('subscriber')
     setValue('phone', Number(''))
     toggle()
@@ -223,7 +221,7 @@ const SidebarAddUser = (props: SidebarAddUserType) => {
                   value={value}
                   label='Profession'
                   onChange={onChange}
-                  placeholder='Profession PVT LTD'
+                  placeholder='Profession'
                   error={Boolean(errors.profession)}
                 />
               )}

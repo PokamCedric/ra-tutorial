@@ -174,7 +174,6 @@ const columns: GridColDef[] = [
 
 const UserList = () => {
   // ** State
-  const [plan, setPlan] = useState<string>('')
   const [value, setValue] = useState<string>('')
   const [paginationModel, setPaginationModel] = useState({ page: 0, pageSize: 10 })
 
@@ -196,15 +195,11 @@ const UserList = () => {
     setValue(val)
   }, [])
 
-  const handlePlanChange = useCallback((e: SelectChangeEvent) => {
-    setPlan(e.target.value)
-  }, [])
-
   return (
     <Grid container spacing={6}>
       <Grid item xs={12}>
         <Card>
-          <TableHeader plan={plan} value={value} handleFilter={handleFilter} handlePlanChange={handlePlanChange} />
+          <TableHeader value={value} handleFilter={handleFilter} />
           <DataGrid
             autoHeight
             rows={store.data}
