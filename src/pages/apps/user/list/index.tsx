@@ -265,7 +265,6 @@ const columns: GridColDef[] = [
 const UserList = ({ apiData }: InferGetStaticPropsType<typeof getStaticProps>) => {
   // ** State
   const [role, setRole] = useState<string>('')
-  const [plan, setPlan] = useState<string>('')
   const [value, setValue] = useState<string>('')
   const [status, setStatus] = useState<string>('')
   const [addUserOpen, setAddUserOpen] = useState<boolean>(false)
